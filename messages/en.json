@@ -1,0 +1,242 @@
+{
+  "nav": {
+    "home": "Home",
+    "models": "Models",
+    "about": "About",
+    "tools": "Tools",
+    "vaa": "VAA",
+    "dealers": "Find a dealer",
+    "dealers_short": "Dealers",
+    "warranty": "Warranty",
+    "register": "Registration"
+  },
+  "hero": {
+    "eyebrow": "— New Collection 2025",
+    "line1": "RIDE",
+    "line2": "BEYOND",
+    "subtitle": "Designed in Québec for Canadian roads, four seasons, and those who never stop.",
+    "cta_primary": "Explore models",
+    "cta_secondary": "Find a dealer",
+    "scroll": "SCROLL",
+    "title_line1": "Built for",
+    "title_line2": "Canada."
+  },
+  "band": ["Compano Bikes", "Custom Made", "Titanium & Carbon", "Free Delivery", "Since 2019"],
+  "statement": {
+    "line1": "BUILT FOR",
+    "line2": "THE ONES WHO",
+    "line3": "PUSH FURTHER.",
+    "desc": "Every Compano bike is built with meticulous precision — for those who never settle for second best."
+  },
+  "craft": {
+    "eyebrow": "— Our craftsmanship",
+    "title": "Precision\ncrafted."
+  },
+  "features": {
+    "eyebrow": "— Engineering",
+    "title": "Every detail\nmatters.",
+    "item1_title": "6061 aluminium frame",
+    "item1_desc": "Geometry engineered for Canadian roads. Optimal rigidity with winter shock absorption.",
+    "item2_title": "500W rear motor",
+    "item2_desc": "Direct traction, constant torque. Built for steep Canadian hills and long distances.",
+    "item3_title": "140 km battery",
+    "item3_desc": "High-density cells, fast charging. Up to 140 km range in assist mode.",
+    "item4_title": "Dual sensor",
+    "item4_desc": "Cadence + Torque. Assistance adapts in real time to your effort — natural and precise."
+  },
+  "footerCta": {
+    "title": "START YOUR\nBUILD",
+    "subtitle": "Choose your Compano. Designed for you, built to last.",
+    "cta": "Explore models"
+  },
+  "models": {
+    "eyebrow": "Our Models",
+    "title": "Four bikes.\nOne for you.",
+    "compare_cta": "Compare models",
+    "view_cta": "View model",
+    "tag1": "Road",
+    "tag2": "Gravel",
+    "tag3": "Urban",
+    "tag4": "Performance"
+  },
+  "modelDetails": {
+    "cta": "Full specs",
+    "fz3_strong": "The Compano FZ3+ features a powerful 500W rear hub motor delivering 60Nm of torque. Its 36V 20Ah (720Wh) battery provides up to 140 km of range in pedal-assist mode* or 50 km using the throttle. Now with both cadence and torque sensors — a true 2-in-1 e-bike.",
+    "fz3_normal": "Designed by Canadians for the needs of Canadian riders and bike paths. The FZ3+ frame engineering lets you step through with ease, while maintaining excellent rigidity for a perfect blend of comfort, performance, and stability.",
+    "fz2_strong": "The Compano FZ2+ features a powerful 500W rear hub motor delivering 60Nm of torque. Its 36V 13Ah (468Wh) battery provides up to 90 km of range in pedal-assist mode* or 50 km using the throttle. Now with both cadence and torque sensors — a true 2-in-1 e-bike.",
+    "fz2_normal": "Designed by Canadians for the needs of Canadian riders and bike paths. The FZ2+ frame engineering lets you step through with ease, while maintaining excellent rigidity for a perfect blend of comfort, performance, and stability.",
+    "se2_strong": "With its battery fully integrated into the frame, the Compano SE2 stands apart from other e-bikes. Its lightweight build gives you the same agile, sporty ride as a regular bike — with all the benefits of electric assist. High-quality battery cells enable ultra-fast charging, making it the perfect companion for urban rides and errands.",
+    "rx1_strong": "With its high-capacity battery integrated into the frame and removable from the top, the Compano RX1+ stands apart. Equipped with a 500W motor delivering 60Nm of torque and a 48V 15Ah (720Wh) battery, it's the ideal choice for those who need long range or serious power to tackle the steepest hills.",
+    "rx1_normal": "Designed by Canadians for the needs of Canadian riders and bike paths. The RX1+ frame engineering lets you step through with ease, while maintaining excellent rigidity for a perfect blend of comfort, performance, and stability."
+  },
+  "about": {
+    "eyebrow": "Our story",
+    "title": "Built for\nthis land.\nYour land.",
+    "founded": "Founded",
+    "p1": "Too many e-bikes are built to the lowest common denominator. Compano was founded in 2019 with one mission: [[strong]] — not adapted from Europe or Asia.",
+    "p1_strong": "an e-bike built for Canada",
+    "p2": "Canadian law allows powerful motors and a throttle lever. We chose the [[strong]] for its consistent power, reduced chain wear, and ease of maintenance through winter.",
+    "p2_strong": "rear hub motor",
+    "stat1_num": "4",
+    "stat1_label": "Models",
+    "stat2_num": "500W",
+    "stat2_label": "Motor",
+    "stat3_num": "140km",
+    "stat3_label": "Max range"
+  },
+  "warranty": {
+    "eyebrow": "Warranty",
+    "title": "We stand\nbehind our bikes.",
+    "items": [
+      {
+        "num": "1",
+        "unit": "YEAR · MECHANICAL PARTS",
+        "title": "Bike parts",
+        "desc": "Drivetrain, wheels, accessories: covered 1 year against manufacturing defects from date of purchase."
+      },
+      {
+        "num": "2",
+        "unit": "YEARS · ELECTRICAL SYSTEM",
+        "title": "Electrical system",
+        "desc": "Battery, motor, display, wiring, and controller — 2 years of full coverage."
+      },
+      {
+        "num": "3",
+        "unit": "YEARS · FRAME",
+        "title": "Frame",
+        "desc": "Compano frames carry a 3-year warranty against any manufacturing defect."
+      }
+    ]
+  },
+  "split": {
+    "brand_tag": "About",
+    "brand_title": "Discover the Compano brand",
+    "brand_cta": "Learn more",
+    "vaa_tag": "VAA · Velec",
+    "vaa_title": "Protected and powered by Velec",
+    "vaa_cta": "Discover the program"
+  },
+  "dealers": {
+    "eyebrow": "Dealer network",
+    "title": "Test ride a Compano\nnear you.",
+    "subtitle": "Our certified dealer network across Québec and Canada.",
+    "cta_primary": "Find a dealer →",
+    "cta_secondary": "Register my bike"
+  },
+  "footer": {
+    "tagline": "Electric bikes built for Canadian riders. Designed in Québec since 2019.",
+    "col_models": "Models",
+    "col_tools": "Tools",
+    "col_contact": "Contact",
+    "tools_guide": "2025 Guide",
+    "contact_join": "Contact us",
+    "contact_about": "About us",
+    "rights": "All rights reserved"
+  },
+  "pages": {
+    "models": {
+      "eyebrow": "Our lineup",
+      "title": "Four bikes.\nOne for you.",
+      "subtitle": "Every Compano is designed in Québec, Canada-compliant, and built for your four seasons.",
+      "compare_title": "Compare models",
+      "motor_title": "Why a rear hub motor?",
+      "motor_subtitle": "A deliberate technical choice for the Canadian climate.",
+      "motor_reasons": [
+        { "title": "Consistent power", "desc": "The rear hub motor delivers direct, steady traction without torque variation based on cadence." },
+        { "title": "Reduced chain wear", "desc": "Without a motorized bottom bracket, the chain lasts much longer — critical for salted winter roads." },
+        { "title": "Throttle lever", "desc": "Canadian law allows a throttle lever. Our rear motor is optimized for this riding mode." },
+        { "title": "Easy maintenance", "desc": "No special tools required. Any bike shop can service your Compano." }
+      ],
+      "compare_rows": {
+        "motor": "Motor",
+        "battery": "Battery",
+        "range_assist": "Range (assist)",
+        "range_throttle": "Range (throttle)",
+        "weight": "Weight",
+        "sensors": "Sensors"
+      }
+    },
+    "about": {
+      "hero_eyebrow": "Our story",
+      "hero_title": "Born in Québec.\nBuilt for Canada.",
+      "timeline_title": "Our journey",
+      "philosophy_title": "Our philosophy",
+      "philosophy_text": "Compano is not an adaptation of a European or Asian model. Every technical decision was made with Québec roads, harsh winters, and Canadian law in mind — law that allows powerful motors and throttle levers.",
+      "milestones": [
+        { "year": "2019", "text": "Compano founded — first prototype built in Montréal." },
+        { "year": "2020", "text": "Commercial launch of the first FZ2+ and FZ3+ models." },
+        { "year": "2022", "text": "Dealer network expanded across Québec." },
+        { "year": "2024", "text": "Launch of the SE2 integrated-battery and RX1+ 48V models." }
+      ]
+    },
+    "dealers": {
+      "eyebrow": "Certified network",
+      "title": "Find a Compano\ndealer.",
+      "subtitle": "Test ride our bikes in person at a certified dealer near you.",
+      "become_dealer": "Become a dealer",
+      "become_dealer_text": "Own a bike shop? Join our certified dealer network.",
+      "contact_us": "Contact us"
+    },
+    "vaa": {
+      "eyebrow": "VAA Program",
+      "title": "Protected by\nVelec.",
+      "subtitle": "The Velec VAA program covers your Compano well beyond the manufacturer warranty.",
+      "what_title": "What is the VAA?",
+      "what_text": "The Velec VAA program is supplemental coverage for your Compano e-bike. It protects your investment against out-of-warranty breakdowns, theft, and accidental damage.",
+      "benefits": [
+        { "title": "Extended coverage", "desc": "Parts and labour coverage beyond the manufacturer warranty." },
+        { "title": "Theft protection", "desc": "Reimbursement if your Compano is stolen." },
+        { "title": "Accidental damage", "desc": "Coverage for damage from a fall or collision." },
+        { "title": "Velec network", "desc": "Service across the entire Velec dealer network in Canada." }
+      ],
+      "cta": "Enroll in the VAA program"
+    },
+    "registration": {
+      "eyebrow": "Registration",
+      "title": "Register\nyour bike.",
+      "subtitle": "Activate your warranty and unlock owner benefits.",
+      "form": {
+        "first_name": "First name",
+        "last_name": "Last name",
+        "email": "Email",
+        "model": "Bike model",
+        "serial": "Serial number",
+        "purchase_date": "Purchase date",
+        "dealer": "Dealer",
+        "warranty_accept": "I accept Compano warranty terms",
+        "submit": "Register my bike",
+        "success": "Your bike is registered! Welcome to the Compano family.",
+        "select_model": "Select a model"
+      }
+    },
+    "contact": {
+      "eyebrow": "Contact us",
+      "title": "We're here\nfor you.",
+      "subtitle": "A question about your bike, warranty, or our models? Write to us.",
+      "form": {
+        "name": "Full name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Send message",
+        "success": "Message sent! We'll get back to you within 48h."
+      },
+      "info_title": "Contact info",
+      "email_label": "Email",
+      "social_title": "Social media",
+      "dealers_link": "Find a dealer",
+      "privacy": "Your data is protected under PIPEDA (Canada). We never sell your personal information."
+    },
+    "tools": {
+      "eyebrow": "Tools",
+      "title": "Compano\nResources.",
+      "subtitle": "Guides, manuals, and tools to get the most from your Compano bike.",
+      "guide_title": "2025 Buying Guide",
+      "guide_desc": "Everything you need to know to choose your Compano e-bike: model comparison, maintenance tips, Canadian regulations.",
+      "guide_cta": "Download the guide",
+      "manual_title": "Owner's Manual",
+      "manual_desc": "Complete user guide for your Compano bike. Maintenance, adjustments, safety.",
+      "manual_cta": "View manual"
+    }
+  }
+}

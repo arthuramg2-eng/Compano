@@ -1,26 +1,210 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand palette */
+  --color-orange: #FF4D00;
+  --color-brand-black: #0A0A0A;
+  --color-brand-dark: #0A0A0A;
+  --color-brand-dark2: #111111;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray: #666666;
+  --color-brand-lgray: #F0F0F0;
+  --color-brand-cream: #FFFFFF;
+
+  /* Fonts */
+  --font-condensed: "Bebas Neue", sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+
+/* ─── Marquee ──────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+/* ─── Scroll indicator pulse ───────────────────────────────── */
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.3; transform: scaleY(1.5); }
+}
+.animate-scroll-pulse {
+  animation: scroll-pulse 1.6s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* ─── Nav underline from center outward ────────────────────── */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: #FF4D00;
+  transition: left 0.3s ease, right 0.3s ease;
+}
+.nav-link-underline:hover::after {
+  left: 0;
+  right: 0;
+}
+
+/* ─── Nav CTA: border → fill left-to-right ─────────────────── */
+.btn-nav-cta {
+  position: relative;
+  overflow: hidden;
+}
+.btn-nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #FF4D00;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 0;
+}
+.btn-nav-cta:hover::before {
+  transform: scaleX(1);
+}
+.btn-nav-cta span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Footer CTA button: fill → border on hover ────────────── */
+.btn-cta-invert {
+  position: relative;
+  overflow: hidden;
+  background: #FF4D00;
+  border: 2px solid #FF4D00;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-cta-invert:hover {
+  background: transparent;
+}
+
+/* ─── Feature item hover highlight ─────────────────────────── */
+.feature-item .feature-num {
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.feature-item:hover .feature-num {
+  opacity: 1 !important;
+  color: #FF4D00;
+}
+.feature-item .feature-title {
+  transition: color 0.3s ease;
+}
+.feature-item:hover .feature-title {
+  color: #FF4D00;
+}
+.feature-item .feature-line {
+  transition: background 0.3s ease;
+}
+.feature-item:hover .feature-line {
+  background: #FF4D00 !important;
+}
+
+/* ─── Model card image zoom ─────────────────────────────────── */
+.model-card-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.model-card:hover .model-card-img {
+  transform: scale(1.06);
+}
+
+/* ─── Model card orange bottom line deploy on hover ─────────── */
+.model-card {
+  position: relative;
+}
+.model-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #FF4D00;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.model-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── Model card spec badge slide up on hover ────────────────── */
+.model-card .spec-badge {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.model-card:hover .spec-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Marquee hover speed-up ─────────────────────────────────── */
+.marquee-band:hover .animate-marquee {
+  animation-duration: 10s;
+}
+
+/* ─── Custom cursor ring text label (EXPLORER →) ─────────────── */
+.cursor-ring-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #FF4D00;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.cursor-ring.is-bike {
+  width: 100px !important;
+  height: 100px !important;
+  border-color: #FF4D00 !important;
+  background: rgba(255, 77, 0, 0.04);
+}
+.cursor-ring.is-bike .cursor-ring-label {
+  opacity: 1;
+}
+.cursor-ring.is-hovering {
+  width: 72px !important;
+  height: 72px !important;
+  border-color: #0A0A0A !important;
+}
+
+/* Masque le curseur natif uniquement quand le custom cursor est actif */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
 }

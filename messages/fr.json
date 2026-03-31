@@ -1,0 +1,242 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "models": "Modèles",
+    "about": "À Propos",
+    "tools": "Outils",
+    "vaa": "VAA",
+    "dealers": "Trouver un détaillant",
+    "dealers_short": "Détaillants",
+    "warranty": "Garantie",
+    "register": "Enregistrement"
+  },
+  "hero": {
+    "eyebrow": "— Nouvelle Collection 2025",
+    "line1": "RIDE",
+    "line2": "BEYOND",
+    "subtitle": "Conçus au Québec pour les routes canadiennes, les quatre saisons, et ceux qui ne s'arrêtent pas.",
+    "cta_primary": "Explorer les modèles",
+    "cta_secondary": "Trouver un détaillant",
+    "scroll": "SCROLL",
+    "title_line1": "Des vélos",
+    "title_line2": "d'ici."
+  },
+  "band": ["Compano Bikes", "Custom Made", "Titanium & Carbon", "Free Delivery", "Since 2019"],
+  "statement": {
+    "line1": "CONÇU POUR",
+    "line2": "CEUX QUI",
+    "line3": "VONT PLUS LOIN.",
+    "desc": "Chaque vélo Compano est fabriqué avec une précision méticuleuse — pour ceux qui ne se satisfont jamais du deuxième meilleur."
+  },
+  "craft": {
+    "eyebrow": "— Notre savoir-faire",
+    "title": "Précision\nartisanale."
+  },
+  "features": {
+    "eyebrow": "— Ingénierie",
+    "title": "Chaque détail\ncompte.",
+    "item1_title": "Cadre aluminium 6061",
+    "item1_desc": "Géométrie étudiée pour les routes québécoises. Rigidité optimale, absorption des chocs hivernaux.",
+    "item2_title": "Moteur 500W arrière",
+    "item2_desc": "Traction directe, couple constant. Conçu pour les côtes canadiennes et les longues distances.",
+    "item3_title": "Batterie 140 km",
+    "item3_desc": "Cellules haute densité, recharge rapide. Jusqu'à 140 km d'autonomie en mode assistance.",
+    "item4_title": "Double capteur",
+    "item4_desc": "Cadence + Torque. L'assistance s'adapte en temps réel à votre effort — naturel et précis."
+  },
+  "footerCta": {
+    "title": "COMMENCEZ\nVOTRE BUILD",
+    "subtitle": "Choisissez votre Compano. Conçu pour vous, fabriqué pour durer.",
+    "cta": "Explorer les modèles"
+  },
+  "models": {
+    "eyebrow": "Nos Modèles",
+    "title": "Quatre vélos.\nUn pour vous.",
+    "compare_cta": "Comparer les modèles",
+    "view_cta": "Voir le modèle",
+    "tag1": "Route",
+    "tag2": "Gravel",
+    "tag3": "Urbain",
+    "tag4": "Performance"
+  },
+  "modelDetails": {
+    "cta": "Fiche complète",
+    "fz3_strong": "Le Compano FZ3+ est équipé d'un puissant moteur à la roue arrière de 500W, développant 60Nm de couple. Sa batterie de 36V 20Ah (720Wh) vous offre une autonomie de 140 km en mode assistance* ou 50 km avec l'utilisation de l'accélérateur. Maintenant avec un capteur de cadence et un capteur de torque, c'est un vélo 2 en 1.",
+    "fz3_normal": "Il est conçu par des Canadiens pour répondre aux besoins des gens et des pistes cyclables d'ici. L'ingénierie du cadre FZ3+ vous permet d'enjamber le vélo avec facilité, tout en conservant une excellente rigidité pour un mélange harmonieux de confort, de performance et de stabilité.",
+    "fz2_strong": "Le Compano FZ2+ est équipé d'un puissant moteur à la roue arrière de 500W, développant 60Nm de couple. Sa batterie de 36V 13Ah (468Wh) vous offre une autonomie de 90 km en mode assistance* ou 50 km avec l'utilisation de l'accélérateur. Maintenant avec un capteur de cadence et un capteur de torque, c'est un vélo 2 en 1.",
+    "fz2_normal": "Il est conçu par des Canadiens pour répondre aux besoins des gens et des pistes cyclables d'ici. L'ingénierie du cadre FZ2+ vous permet d'enjamber le vélo avec facilité, tout en conservant une excellente rigidité pour un mélange harmonieux de confort, de performance et de stabilité.",
+    "se2_strong": "Avec sa batterie entièrement intégrée au cadre, le vélo à assistance électrique Compano SE2 se démarque des autres VAE. Son poids plume vous offre la même expérience de conduite agile et sportive qu'un vélo « normal » avec tous les avantages d'un vélo électrique. Les cellules de batterie de haute qualité qui permettent une recharge ultra-rapide, en font le compagnon idéal pour des balades et des emplettes en milieu urbain.",
+    "rx1_strong": "Avec sa batterie haute capacité intégrée au cadre qui se retire par le dessus, le vélo à assistance électrique Compano RX1+ se démarque des autres VAE. Équipé d'un moteur de 500W offrant 60Nm de couple et sa batterie de 48V 15Ah (720Wh) il est le choix idéal pour ceux qui ont besoin soit de beaucoup d'autonomie ou d'un moteur très puissant pour affronter les pentes les plus longues et abruptes.",
+    "rx1_normal": "Il est conçu par des Canadiens pour répondre aux besoins des gens et des pistes cyclables d'ici. L'ingénierie du cadre RX1+ vous permet d'enjamber le vélo avec facilité, tout en conservant une excellente rigidité pour un mélange harmonieux de confort, de performance et de stabilité."
+  },
+  "about": {
+    "eyebrow": "Notre histoire",
+    "title": "Un vélo\nvraiment\nd'ici.",
+    "founded": "Fondé",
+    "p1": "Trop de vélos électriques sont des compromis entre les besoins de différents pays. Compano a été créé en 2019 avec une seule idée : [[strong]] — pas adapté de l'Europe ou de l'Asie.",
+    "p1_strong": "un VAE conçu pour le Québec et le Canada",
+    "p2": "Notre législation permet des moteurs puissants et un levier d'accélérateur. Nous avons choisi le [[strong]] pour sa puissance constante, son usure réduite de chaîne et sa facilité d'entretien en hiver.",
+    "p2_strong": "moteur à roue arrière",
+    "stat1_num": "4",
+    "stat1_label": "Modèles",
+    "stat2_num": "500W",
+    "stat2_label": "Moteur",
+    "stat3_num": "140km",
+    "stat3_label": "Autonomie max"
+  },
+  "warranty": {
+    "eyebrow": "Garantie",
+    "title": "On assume\nnotre produit.",
+    "items": [
+      {
+        "num": "1",
+        "unit": "AN · PIÈCES MÉCANIQUES",
+        "title": "Pièces du vélo",
+        "desc": "Transmission, roues, accessoires : couverts 1 an contre tout défaut de fabrication dès la date d'achat."
+      },
+      {
+        "num": "2",
+        "unit": "ANS · SYSTÈME ÉLECTRIQUE",
+        "title": "Système électrique",
+        "desc": "Batterie, moteur, console, filage électrique et contrôleur — 2 ans de couverture complète."
+      },
+      {
+        "num": "3",
+        "unit": "ANS · CADRE",
+        "title": "Cadre",
+        "desc": "Les cadres Compano sont garantis 3 ans contre tout défaut de fabrication."
+      }
+    ]
+  },
+  "split": {
+    "brand_tag": "À Propos",
+    "brand_title": "Découvrez la marque Compano",
+    "brand_cta": "En savoir plus",
+    "vaa_tag": "VAA · Velec",
+    "vaa_title": "Protégé et propulsé par Velec",
+    "vaa_cta": "Découvrir le programme"
+  },
+  "dealers": {
+    "eyebrow": "Réseau de détaillants",
+    "title": "Essayez un Compano\nprès de chez vous.",
+    "subtitle": "Notre réseau de détaillants certifiés partout au Québec et au Canada.",
+    "cta_primary": "Trouver un détaillant →",
+    "cta_secondary": "Enregistrer mon vélo"
+  },
+  "footer": {
+    "tagline": "Des vélos électriques d'ici pour votre style de vie. Conçus au Québec depuis 2019.",
+    "col_models": "Modèles",
+    "col_tools": "Outils",
+    "col_contact": "Contact",
+    "tools_guide": "Guide 2025",
+    "contact_join": "Nous joindre",
+    "contact_about": "À propos",
+    "rights": "Tous droits réservés"
+  },
+  "pages": {
+    "models": {
+      "eyebrow": "Notre gamme",
+      "title": "Quatre vélos.\nUn pour vous.",
+      "subtitle": "Chaque modèle Compano est conçu au Québec, homologué Canada, et adapté à vos quatre saisons.",
+      "compare_title": "Comparer les modèles",
+      "motor_title": "Pourquoi un moteur arrière ?",
+      "motor_subtitle": "Un choix technique réfléchi pour le climat canadien.",
+      "motor_reasons": [
+        { "title": "Puissance constante", "desc": "Le moteur à roue arrière offre une traction directe et régulière, sans variation de couple selon la cadence." },
+        { "title": "Usure chaîne réduite", "desc": "Sans boîtier de pédalier motorisé, la chaîne dure plus longtemps — crucial pour les hivers salés." },
+        { "title": "Levier d'accélération", "desc": "La législation canadienne autorise un levier de gaz. Notre moteur arrière est optimisé pour ce mode." },
+        { "title": "Entretien simplifié", "desc": "Aucun outil spécial requis. N'importe quel atelier peut entretenir votre Compano." }
+      ],
+      "compare_rows": {
+        "motor": "Moteur",
+        "battery": "Batterie",
+        "range_assist": "Autonomie (assistance)",
+        "range_throttle": "Autonomie (accélérateur)",
+        "weight": "Poids",
+        "sensors": "Capteurs"
+      }
+    },
+    "about": {
+      "hero_eyebrow": "Notre histoire",
+      "hero_title": "Nés au Québec.\nFaits pour le Canada.",
+      "timeline_title": "Notre parcours",
+      "philosophy_title": "Notre philosophie",
+      "philosophy_text": "Compano n'est pas une adaptation d'un modèle européen ou asiatique. Chaque décision technique a été prise en pensant aux routes québécoises, au froid hivernal, et à la législation canadienne qui autorise les moteurs puissants et les leviers d'accélération.",
+      "milestones": [
+        { "year": "2019", "text": "Fondation de Compano — premier prototype conçu à Montréal." },
+        { "year": "2020", "text": "Lancement commercial des premiers modèles FZ2+ et FZ3+." },
+        { "year": "2022", "text": "Expansion du réseau de détaillants à travers le Québec." },
+        { "year": "2024", "text": "Lancement du SE2 à batterie intégrée et du RX1+ 48V." }
+      ]
+    },
+    "dealers": {
+      "eyebrow": "Réseau certifié",
+      "title": "Trouvez un détaillant\nCompano.",
+      "subtitle": "Essayez nos vélos en personne dans un point de vente certifié.",
+      "become_dealer": "Devenir détaillant",
+      "become_dealer_text": "Vous êtes propriétaire d'un commerce vélo ? Rejoignez notre réseau de détaillants certifiés.",
+      "contact_us": "Nous contacter"
+    },
+    "vaa": {
+      "eyebrow": "Programme VAA",
+      "title": "Protégé par\nVelec.",
+      "subtitle": "Le programme VAA (Vélo À Assistance électrique) de Velec couvre votre Compano bien au-delà de la garantie fabricant.",
+      "what_title": "Qu'est-ce que le VAA ?",
+      "what_text": "Le programme VAA de Velec est une couverture complémentaire pour votre vélo électrique Compano. Il protège votre investissement contre les pannes hors garantie, le vol, et les dommages accidentels.",
+      "benefits": [
+        { "title": "Protection étendue", "desc": "Couverture des pièces et main-d'œuvre au-delà de la garantie fabricant." },
+        { "title": "Protection vol", "desc": "Remboursement en cas de vol de votre vélo Compano." },
+        { "title": "Dommages accidentels", "desc": "Prise en charge des dommages suite à une chute ou collision." },
+        { "title": "Réseau Velec", "desc": "Service dans tout le réseau de détaillants Velec au Canada." }
+      ],
+      "cta": "S'inscrire au programme VAA"
+    },
+    "registration": {
+      "eyebrow": "Enregistrement",
+      "title": "Enregistrez\nvotre vélo.",
+      "subtitle": "Activez votre garantie et accédez aux avantages propriétaire.",
+      "form": {
+        "first_name": "Prénom",
+        "last_name": "Nom",
+        "email": "Courriel",
+        "model": "Modèle de vélo",
+        "serial": "Numéro de série",
+        "purchase_date": "Date d'achat",
+        "dealer": "Détaillant",
+        "warranty_accept": "J'accepte les conditions de garantie Compano",
+        "submit": "Enregistrer mon vélo",
+        "success": "Votre vélo est enregistré ! Bienvenue dans la famille Compano.",
+        "select_model": "Choisissez un modèle"
+      }
+    },
+    "contact": {
+      "eyebrow": "Nous joindre",
+      "title": "On est là\npour vous.",
+      "subtitle": "Une question sur votre vélo, votre garantie ou nos modèles ? Écrivez-nous.",
+      "form": {
+        "name": "Nom complet",
+        "email": "Courriel",
+        "subject": "Sujet",
+        "message": "Message",
+        "submit": "Envoyer le message",
+        "success": "Message envoyé ! Nous vous répondrons sous 48h."
+      },
+      "info_title": "Coordonnées",
+      "email_label": "Courriel",
+      "social_title": "Réseaux sociaux",
+      "dealers_link": "Trouver un détaillant",
+      "privacy": "Vos données sont protégées conformément à la Loi 25 (Québec) et à la LPRPDE (Canada). Nous ne vendons jamais vos informations personnelles."
+    },
+    "tools": {
+      "eyebrow": "Outils",
+      "title": "Ressources\nCompano.",
+      "subtitle": "Guides, manuels et outils pour tirer le meilleur de votre vélo Compano.",
+      "guide_title": "Guide d'achat 2025",
+      "guide_desc": "Tout ce que vous devez savoir pour choisir votre vélo électrique Compano : comparatif des modèles, conseils d'entretien, législation canadienne.",
+      "guide_cta": "Télécharger le guide",
+      "manual_title": "Manuel d'utilisation",
+      "manual_desc": "Mode d'emploi complet pour votre vélo Compano. Entretien, réglages, sécurité.",
+      "manual_cta": "Voir le manuel"
+    }
+  }
+}
