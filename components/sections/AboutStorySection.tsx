@@ -78,8 +78,9 @@ export default function AboutStorySection({ locale }: Props) {
       )
 
       // ── Motor block ───────────────────────────────────────────────────
-      gsap.fromTo(
-        motorRef.current?.querySelectorAll('h2, p'),
+      const motorEls = motorRef.current?.querySelectorAll('h2, p')
+      if (motorEls) gsap.fromTo(
+        motorEls,
         { y: 30, opacity: 0 },
         {
           y: 0,
