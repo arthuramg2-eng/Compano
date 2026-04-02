@@ -97,8 +97,9 @@ export default function AboutStorySection({ locale }: Props) {
       )
 
       // ── Stats ─────────────────────────────────────────────────────────
-      gsap.fromTo(
-        statsRef.current?.querySelectorAll('.stat-item'),
+      const statsEls = statsRef.current?.querySelectorAll('.stat-item')
+      if (statsEls) gsap.fromTo(
+        statsEls,
         { y: 20, opacity: 0 },
         {
           y: 0,
@@ -131,8 +132,9 @@ export default function AboutStorySection({ locale }: Props) {
       )
 
       // Milestone cards stagger
-      gsap.fromTo(
-        milesRef.current?.querySelectorAll('.milestone-item'),
+      const milesEls = milesRef.current?.querySelectorAll('.milestone-item')
+      if (milesEls) gsap.fromTo(
+        milesEls,
         { y: 30, opacity: 0 },
         {
           y: 0,
