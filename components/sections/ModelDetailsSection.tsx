@@ -246,7 +246,7 @@ function DividerLine() {
 
   return (
     <div ref={wrapRef} className="my-4">
-      <div className="divider-line border-0 border-t-2 border-brand-black/8" style={{ scaleX: 0 }} />
+      <div className="divider-line border-0 border-t-2 border-brand-black/8" style={{ transform: 'scaleX(0)' }} />
     </div>
   )
 }
