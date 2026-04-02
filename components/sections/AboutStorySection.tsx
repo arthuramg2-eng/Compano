@@ -275,7 +275,7 @@ export default function AboutStorySection({ locale }: Props) {
             <div
               ref={timelineRef}
               className="absolute inset-0 h-px bg-brand-black/30"
-              style={{ scaleX: 0, transformOrigin: 'left center' }}
+              style={{ transform: 'scaleX(0)', transformOrigin: 'left center' }}
             />
           </div>
 
