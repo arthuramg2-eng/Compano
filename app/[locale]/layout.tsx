@@ -2,21 +2,21 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { Bebas_Neue, Inter } from 'next/font/google'
+import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import '../globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import SmoothScroll from '@/components/layout/SmoothScroll'
 import CustomCursor from '@/components/ui/CustomCursor'
 
-const bebasNeue = Bebas_Neue({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['700', '800'],
   variable: '--font-condensed',
   display: 'swap',
 })
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
   variable: '--font-sans',
@@ -44,7 +44,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${bebasNeue.variable} ${inter.variable}`}
+      className={`${barlowCondensed.variable} ${dmSans.variable}`}
     >
       <body className="min-h-screen flex flex-col">
         <SmoothScroll />

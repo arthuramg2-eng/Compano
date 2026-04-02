@@ -45,7 +45,7 @@
     "item4_desc": "Cadence + Torque. Assistance adapts in real time to your effort — natural and precise."
   },
   "footerCta": {
-    "title": "START YOUR\nBUILD",
+    "title": "Order your\nCOMPANO",
     "subtitle": "Choose your Compano. Designed for you, built to last.",
     "cta": "Explore models"
   },
@@ -167,7 +167,21 @@
         { "year": "2020", "text": "Commercial launch of the first FZ2+ and FZ3+ models." },
         { "year": "2022", "text": "Dealer network expanded across Québec." },
         { "year": "2024", "text": "Launch of the SE2 integrated-battery and RX1+ 48V models." }
-      ]
+      ],
+      "hero_subtitle": "Founded in 2019 in Montréal — built for Canadian roads, winters, and regulations.",
+      "origins_title": "The beginning of Compano",
+      "origins_text": "Compano was founded in 2019. With the team's deep expertise in electric bikes, motors, and batteries, the company set out to offer a Québec-designed e-bike with cutting-edge technology — a product tailored for the needs, regulations, and reality of Québec and Canada.",
+      "motor_title": "A motor built for Québec",
+      "motor_text1": "It was very important to our team to offer a product that wasn't a compromise between the needs of different countries — but a product truly built for Canada.",
+      "motor_text2": "Canadian law allows powerful motors and a throttle lever. For this reason, the rear hub motor was chosen. A rear hub motor with enough power (350W+) offers major advantages: consistent power regardless of gear selection, a throttle lever, reduced chain wear, easier maintenance, and more.",
+      "motor_text3": "Compano electric bikes were developed for and by Canadians in Québec.",
+      "stat1_num": "2019",
+      "stat1_label": "Founded",
+      "stat2_num": "500W",
+      "stat2_label": "Motor",
+      "stat3_num": "140 km",
+      "stat3_label": "Max range",
+      "cta_models": "Explore models"
     },
     "dealers": {
       "eyebrow": "Certified network",
@@ -237,6 +251,34 @@
       "manual_title": "Owner's Manual",
       "manual_desc": "Complete user guide for your Compano bike. Maintenance, adjustments, safety.",
       "manual_cta": "View manual"
+    },
+    "product": {
+      "price_label": "Price",
+      "vaa_badge": "VAA program included (valued at $300+)",
+      "size_label": "Available sizes",
+      "colors_label": "Available colors",
+      "find_dealer": "Find a dealer",
+      "description_title": "Description",
+      "range_title": "Range",
+      "range_note": "Maximum recommended rider weight: 270 lbs. *The range calculation is based on a 180 lbs cyclist, at assist level 2, at a speed of 20 km/h on flat ground.",
+      "specs_title": "Technical specifications",
+      "mechanical_title": "Mechanical components",
+      "electrical_title": "Electrical components",
+      "other_models": "Other models",
+      "motor_label": "Motor",
+      "torque_label": "Torque",
+      "battery_label": "Battery",
+      "range_assist_label": "Range (assist)",
+      "range_throttle_label": "Range (throttle)",
+      "sensors_label": "Sensors",
+      "fz2_desc1": "The Compano FZ2+ is equipped with a powerful 500W rear-wheel motor, delivering 60Nm of torque. Its 36V 13Ah (468Wh) battery provides a range of 90 km in pedal-assist mode* or 38 km with the throttle. Now featuring a cadence sensor and a torque sensor, it's a 2-in-1 bike.",
+      "fz2_desc2": "It's designed by Canadians to meet the needs of people and local bike paths. Its battery, located behind the seat post, allows for optimal weight distribution, a low center of gravity, and ample frame clearance for easy mounting.\n\nIt is equipped with wide tires specifically designed for electric bikes to prevent punctures, a large central console with 5 levels of assistance, a rear rack, mudguards, an ultra-sturdy kickstand, a comfortable saddle, and front and rear lights. The hydraulic disc brake system provides powerful stopping power, the levers are equipped with a motor cut-off switch, and the rear light is integrated with the braking system to provide a brake light and ensure maximum safety.",
+      "fz3_desc1": "The Compano FZ3+ is equipped with a powerful 500W rear-wheel motor, delivering 60Nm of torque. Its 36V 20Ah (720Wh) battery provides a range of 140 km in pedal-assist mode* or 50 km with the throttle. Now featuring a cadence sensor and a torque sensor, it's a 2-in-1 bike.",
+      "fz3_desc2": "It's designed by Canadians to meet the needs of people and local bike paths. Its battery, located behind the seat post, allows for optimal weight distribution, a low center of gravity, and ample frame clearance for easy mounting.\n\nIt is equipped with wide tires specifically designed for electric bikes to prevent punctures, a large central console with 5 levels of assistance, a rear rack, mudguards, an ultra-sturdy kickstand, a comfortable saddle, and front and rear lights. The hydraulic disc brake system provides powerful stopping power, the levers are equipped with a motor cut-off switch, and the rear light is integrated with the braking system to provide a brake light and ensure maximum safety.",
+      "se2_desc1": "With its battery fully integrated into the frame, the Compano SE2 stands apart from other e-bikes. Its lightweight build gives you the same agile, sporty ride as a regular bike — with all the benefits of electric assist.",
+      "se2_desc2": "High-quality battery cells enable ultra-fast charging, making it the perfect companion for urban rides and daily errands. Invisible battery, clean design — the SE2 is the e-bike for those who don't want to look like they're riding an e-bike.",
+      "rx1_desc1": "With its high-capacity battery integrated into the frame and removable from the top, the Compano RX1+ stands apart. Equipped with a 500W motor delivering 60Nm of torque and a 48V 15Ah (720Wh) battery, it's the ideal choice for those who need long range or serious power to tackle the steepest hills.",
+      "rx1_desc2": "Designed by Canadians for Québec roads. The RX1+ frame engineering ensures easy step-through access while maintaining excellent rigidity for a perfect blend of comfort, performance, and stability."
     }
   }
 }

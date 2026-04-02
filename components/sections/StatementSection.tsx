@@ -77,37 +77,41 @@ export default function StatementSection() {
         }
       )
 
-      // Image: parallax vertical + fade in
+      // Image: fade in
       gsap.fromTo(
         imgRef.current,
-        { opacity: 0, x: 40 },
+        { opacity: 0 },
         {
           opacity: 1,
-          x: 0,
-          duration: 1.2,
+          duration: 1.6,
           ease: 'expo.out',
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 75%',
+            start: 'top 80%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      gsap.fromTo(
-        imgRef.current,
-        { y: '-6%' },
-        {
-          y: '6%',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      )
+      // Subtle parallax
+      const imgEl = imgRef.current?.querySelector('img')
+      if (imgEl) {
+        gsap.fromTo(
+          imgEl,
+          { scale: 1.06, y: -20 },
+          {
+            scale: 1,
+            y: 20,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 2,
+            },
+          }
+        )
+      }
     },
     { scope: containerRef }
   )
@@ -115,83 +119,72 @@ export default function StatementSection() {
   return (
     <section
       ref={containerRef}
-      className="bg-white overflow-hidden"
+      className="relative bg-white overflow-hidden"
+      style={{ minHeight: '480px' }}
     >
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
-
-        {/* Left — text */}
-        <div className="px-6 lg:px-12 py-28 flex flex-col justify-center">
-          <div className="mb-10">
-            <div ref={line1Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
-              <h2
-                className="font-condensed uppercase text-brand-black"
-                style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
-              >
-                {t('line1')}
-              </h2>
-            </div>
-            <div ref={line2Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
-              <h2
-                className="font-condensed uppercase text-brand-black"
-                style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
-              >
-                {t('line2')}
-              </h2>
-            </div>
-            <div ref={line3Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
-              <h2
-                className="font-condensed uppercase text-orange"
-                style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
-              >
-                {t('line3')}
-              </h2>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-5 max-w-[480px]">
-            <div
-              ref={accentLineRef}
-              className="h-[2px] bg-orange"
-              style={{ width: 96, transformOrigin: 'left center', transform: 'scaleX(0)' }}
-            />
-            <p
-              ref={descRef}
-              className="font-sans font-light text-brand-black/45 text-[15px] leading-[1.8]"
-              style={{ opacity: 0 }}
-            >
-              {t('desc')}
-            </p>
-          </div>
-        </div>
-
-        {/* Right — image with parallax */}
+      {/* Image — right strip, no empty space */}
+      <div
+        ref={imgRef}
+        className="absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden"
+        style={{ width: '52%', opacity: 0 }}
+      >
+        <Image
+          src="https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/dms3rep/multi/DSC_7741.jpg"
+          alt="Compano — fabrication"
+          fill
+          className="object-cover object-[38%_100%]"
+          sizes="52vw"
+        />
+        {/* Left blend */}
         <div
-          className="relative overflow-hidden hidden lg:block"
-          style={{ minHeight: '560px' }}
-        >
-          <div
-            ref={imgRef}
-            className="absolute inset-x-0 pointer-events-none"
-            style={{ top: '-6%', height: '112%', opacity: 0 }}
-          >
-            <Image
-              src="https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/dms3rep/multi/DSC_7741.jpg"
-              alt="Compano — fabrication"
-              fill
-              className="object-cover"
-              sizes="50vw"
-            />
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, white 0%, transparent 30%)' }}
+        />
+      </div>
+
+      {/* Text */}
+      <div className="relative z-10 px-6 lg:px-12 py-28 max-w-[1400px] mx-auto flex flex-col justify-center h-full" style={{ minHeight: '480px' }}>
+        <div className="mb-10">
+          <div ref={line1Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
+            <h2
+              className="font-condensed uppercase text-brand-black"
+              style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
+            >
+              {t('line1')}
+            </h2>
           </div>
-          {/* Subtle left-side fade to blend with white background */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to right, rgba(255,255,255,0.55) 0%, transparent 35%)',
-              zIndex: 1,
-            }}
-          />
+          <div ref={line2Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
+            <h2
+              className="font-condensed uppercase text-brand-black"
+              style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
+            >
+              {t('line2')}
+            </h2>
+          </div>
+          <div ref={line3Ref} style={{ clipPath: 'inset(0 0 100% 0)' }}>
+            <h2
+              className="font-condensed uppercase text-orange"
+              style={{ fontSize: 'clamp(52px, 7vw, 108px)', lineHeight: '0.92' }}
+            >
+              {t('line3')}
+            </h2>
+          </div>
         </div>
 
+        <div className="flex flex-col gap-5 max-w-[480px]">
+          <div
+            ref={accentLineRef}
+            className="h-[2px] bg-orange"
+            style={{ width: 96, transformOrigin: 'left center', transform: 'scaleX(0)' }}
+          />
+          <p
+            ref={descRef}
+            className="font-sans font-light text-brand-black/55 text-[15px] leading-[1.8]"
+            style={{ opacity: 0 }}
+          >
+            {t('desc')}
+          </p>
+        </div>
       </div>
     </section>
   )

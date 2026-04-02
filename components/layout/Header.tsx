@@ -2,9 +2,11 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import LangSwitcher from './LangSwitcher'
 
 gsap.registerPlugin(useGSAP)
@@ -18,30 +20,48 @@ export default function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled]     = useState(false)
   const headerRef = useRef<HTMLElement>(null)
+  const pathname  = usePathname()
 
+  const isProductPage = /\/modeles\/.+/.test(pathname)
   const prefix = locale === 'en' ? '/en' : ''
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    // Pages produit : hero = 62vh, on attend d'en sortir
+    const threshold = isProductPage ? window.innerHeight * 0.45 : 60
+    const onScroll = () => setScrolled(window.scrollY > threshold)
+    onScroll() // état initial
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [isProductPage])
 
-  // Enter from top after hero has started settling
+  // Entrée depuis le haut uniquement sur les pages non-produit
   useGSAP(
     () => {
+      if (isProductPage) return
       gsap.fromTo(
         headerRef.current,
         { y: -80, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.8 }
       )
     },
-    { scope: headerRef }
+    { scope: headerRef, dependencies: [isProductPage] }
   )
+
+  // Pages produit : fade piloté par le scroll
+  useEffect(() => {
+    if (!isProductPage) return
+    const el = headerRef.current
+    if (!el) return
+    gsap.to(el, {
+      opacity: scrolled ? 1 : 0,
+      duration: scrolled ? 0.5 : 0.3,
+      ease: scrolled ? 'power2.out' : 'power2.in',
+    })
+  }, [scrolled, isProductPage])
 
   const navLinks = [
     { href: `${prefix}/modeles`,            label: t('models')        },
-    { href: `${prefix || '/'}#about`,       label: t('about')         },
+    { href: `${prefix}/a-propos`,            label: t('about')         },
     { href: `${prefix || '/'}#garantie`,    label: t('warranty')      },
     { href: `${prefix || '/'}#detaillants`, label: t('dealers_short') },
   ]
@@ -57,19 +77,9 @@ export default function Header({ locale }: HeaderProps) {
         }`}
         style={{ opacity: 0 }}
       >
-        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-full">
+        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12 h-full grid grid-cols-[1fr_auto_1fr] items-center">
 
-          {/* Logo */}
-          <Link href={prefix || '/'} className="flex-shrink-0">
-            <span
-              className="font-condensed uppercase"
-              style={{ fontSize: 26, letterSpacing: '0.15em', color: '#0A0A0A' }}
-            >
-              COMPANO
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
+          {/* Left — nav links */}
           <nav className="hidden lg:flex items-center gap-10 h-full">
             {navLinks.map((link) => (
               <Link
@@ -85,8 +95,34 @@ export default function Header({ locale }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Desktop right */}
-          <div className="hidden lg:flex items-center gap-5">
+          {/* Mobile: logo left-aligned */}
+          <Link href={prefix || '/'} className="lg:hidden flex items-center">
+            <Image
+              src="/logo_black.png"
+              alt="Compano"
+              width={140}
+              height={32}
+              className="object-contain"
+              style={{ height: 40, width: 'auto' }}
+              priority
+            />
+          </Link>
+
+          {/* Center — logo */}
+          <Link href={prefix || '/'} className="hidden lg:flex justify-center items-center">
+            <Image
+              src="/logo_black.png"
+              alt="Compano"
+              width={220}
+              height={48}
+              className="object-contain"
+              style={{ height: 50, width: 'auto' }}
+              priority
+            />
+          </Link>
+
+          {/* Right — lang + CTA */}
+          <div className="hidden lg:flex items-center justify-end gap-5">
             <LangSwitcher locale={locale} />
             <Link
               href={`${prefix || '/'}#detaillants`}
@@ -97,16 +133,18 @@ export default function Header({ locale }: HeaderProps) {
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            type="button"
-            className="lg:hidden flex flex-col gap-[5px] p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
-          >
-            <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-            <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
-          </button>
+          <div className="lg:hidden flex justify-end">
+            <button
+              type="button"
+              className="flex flex-col gap-[5px] p-2"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Menu"
+            >
+              <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+              <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-6 h-[1.5px] bg-brand-black transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+            </button>
+          </div>
         </div>
       </header>
 

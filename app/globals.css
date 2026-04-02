@@ -11,10 +11,15 @@
   --color-brand-lgray: #F0F0F0;
   --color-brand-cream: #FFFFFF;
 
+  /* Extended palette — product page */
+  --color-brand-cream: #F5F4F0;
+  --color-brand-mid: #1A1A1A;
+  --color-brand-lgray2: #E8E6E0;
+
   /* Fonts */
-  --font-condensed: "Bebas Neue", sans-serif;
-  --font-display: "Bebas Neue", sans-serif;
-  --font-sans: "Inter", sans-serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
 }
 
 html {
@@ -202,6 +207,47 @@ body {
   height: 72px !important;
   border-color: #0A0A0A !important;
 }
+
+/* ─── Carousel buttons — round, orange border, animated fill ─── */
+.carousel-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #FF4D00;
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, transform 0.2s ease;
+}
+.carousel-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #FF4D00;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.carousel-btn:hover {
+  box-shadow: 0 0 0 4px rgba(255, 77, 0, 0.18);
+  transform: scale(1.08);
+}
+.carousel-btn:hover::before {
+  transform: scale(1);
+}
+.carousel-btn svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  stroke: #FF4D00;
+}
+.carousel-btn:hover svg {
+  stroke: white;
+}
+.carousel-btn-prev:hover svg { transform: translateX(-2px); }
+.carousel-btn-next:hover svg { transform: translateX(2px); }
 
 /* Masque le curseur natif uniquement quand le custom cursor est actif */
 body.custom-cursor-active,

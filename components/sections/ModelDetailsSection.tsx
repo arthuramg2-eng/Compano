@@ -25,6 +25,7 @@ interface ModelRowProps {
   href: string
   reverse: boolean
   anchorId: string
+  index: number
 }
 
 function ModelRow({
@@ -36,71 +37,154 @@ function ModelRow({
   href,
   reverse,
   anchorId,
+  index,
 }: ModelRowProps) {
-  const rowRef  = useRef<HTMLDivElement>(null)
-  const textRef = useRef<HTMLDivElement>(null)
-  const imgRef  = useRef<HTMLDivElement>(null)
+  const rowRef   = useRef<HTMLDivElement>(null)
+  const imgRef   = useRef<HTMLDivElement>(null)
+  const ghostRef = useRef<HTMLSpanElement>(null)
+  const nameRef  = useRef<HTMLHeadingElement>(null)
+  const body1Ref = useRef<HTMLParagraphElement>(null)
+  const body2Ref = useRef<HTMLParagraphElement>(null)
+  const ctaRef   = useRef<HTMLAnchorElement>(null)
 
   useGSAP(
     () => {
-      const textDir = reverse ? 60 : -60
-
-      gsap.fromTo(
-        textRef.current,
-        { x: textDir, opacity: 0 },
-        {
-          x: 0, opacity: 1, duration: 1, ease: 'expo.out',
+      // Subtle parallax on the image itself
+      const imgEl = imgRef.current?.querySelector('img')
+      if (imgEl) {
+        gsap.to(imgEl, {
+          y: -28,
+          ease: 'none',
           scrollTrigger: {
             trigger: rowRef.current,
-            start: 'top 78%',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.8,
+          },
+        })
+      }
+
+      // Ghost index number
+      gsap.fromTo(
+        ghostRef.current,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.6,
+          ease: 'expo.out',
+          scrollTrigger: {
+            trigger: rowRef.current,
+            start: 'top 82%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      gsap.fromTo(
-        imgRef.current,
-        { x: reverse ? -60 : 60, opacity: 0 },
-        {
-          x: 0, opacity: 1, duration: 1, ease: 'expo.out',
-          scrollTrigger: {
-            trigger: rowRef.current,
-            start: 'top 78%',
-            toggleActions: 'play none none none',
-          },
-        }
+      // Staggered text timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: rowRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      })
+
+      tl.fromTo(
+        nameRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'expo.out' }
       )
+
+      if (body1Ref.current) {
+        tl.fromTo(
+          body1Ref.current,
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75, ease: 'expo.out' },
+          '-=0.6'
+        )
+      }
+
+      if (body2Ref.current) {
+        tl.fromTo(
+          body2Ref.current,
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75, ease: 'expo.out' },
+          '-=0.55'
+        )
+      }
+
+      if (ctaRef.current) {
+        tl.fromTo(
+          ctaRef.current,
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.65, ease: 'expo.out' },
+          '-=0.4'
+        )
+      }
     },
     { scope: rowRef }
   )
 
+  const num = String(index + 1).padStart(2, '0')
+
   const textCol = (
     <div
-      ref={textRef}
-      className="flex flex-col justify-center py-8 lg:py-0"
-      style={{ opacity: 0 }}
+      className="relative flex flex-col justify-center py-8 lg:py-0 overflow-hidden"
       id={anchorId}
     >
-      <h2
-        className="font-condensed uppercase mb-5"
-        style={{ fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: '0.92', color: '#CC5600' }}
+      {/* Ghost index number */}
+      <span
+        ref={ghostRef}
+        aria-hidden="true"
+        className="absolute bottom-0 right-0 font-condensed leading-none select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(100px, 14vw, 190px)',
+          color: 'rgba(0,0,0,0.045)',
+          opacity: 0,
+          lineHeight: 0.85,
+        }}
       >
-        {name}
-      </h2>
-      <p className="font-sans text-[14px] leading-[1.75] text-brand-black mb-3 font-medium max-w-[480px]">
-        {bodyStrong}
-      </p>
-      {bodyNormal && (
-        <p className="font-sans text-[13px] leading-[1.75] text-brand-black/50 font-light max-w-[480px] mb-7">
-          {bodyNormal}
+        {num}
+      </span>
+
+      <div className="relative z-10">
+        <h2
+          ref={nameRef}
+          className="font-condensed uppercase mb-5 text-orange"
+          style={{
+            fontSize: 'clamp(40px, 5vw, 72px)',
+            lineHeight: '0.92',
+            opacity: 0,
+          }}
+        >
+          {name}
+        </h2>
+        <p
+          ref={body1Ref}
+          className="font-sans text-[14px] leading-[1.75] text-brand-black mb-3 font-medium max-w-[480px]"
+          style={{ opacity: 0 }}
+        >
+          {bodyStrong}
         </p>
-      )}
-      <Link
-        href={href}
-        className="inline-flex items-center self-start px-7 h-11 bg-orange text-white font-sans text-[11px] tracking-[0.22em] uppercase font-medium hover:bg-brand-black transition-colors duration-300"
-      >
-        {ctaLabel}
-      </Link>
+        {bodyNormal && (
+          <p
+            ref={body2Ref}
+            className="font-sans text-[13px] leading-[1.75] text-brand-black/50 font-light max-w-[480px] mb-7"
+            style={{ opacity: 0 }}
+          >
+            {bodyNormal}
+          </p>
+        )}
+        <Link
+          ref={ctaRef}
+          href={href}
+          className="inline-flex items-center self-start px-7 h-11 bg-orange text-white font-sans text-[11px] tracking-[0.22em] uppercase font-medium hover:bg-brand-black transition-colors duration-300"
+          style={{ opacity: 0 }}
+        >
+          {ctaLabel}
+        </Link>
+      </div>
     </div>
   )
 
@@ -108,7 +192,7 @@ function ModelRow({
     <div
       ref={imgRef}
       className="relative overflow-hidden"
-      style={{ aspectRatio: '4/3', opacity: 0 }}
+      style={{ aspectRatio: '4/3' }}
     >
       <Image
         src={image}
@@ -133,6 +217,36 @@ function ModelRow({
           {textCol}
         </>
       )}
+    </div>
+  )
+}
+
+function DividerLine() {
+  const wrapRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        '.divider-line',
+        { scaleX: 0, transformOrigin: 'left center' },
+        {
+          scaleX: 1,
+          duration: 1.4,
+          ease: 'expo.inOut',
+          scrollTrigger: {
+            trigger: wrapRef.current,
+            start: 'top 92%',
+            toggleActions: 'play none none none',
+          },
+        }
+      )
+    },
+    { scope: wrapRef }
+  )
+
+  return (
+    <div ref={wrapRef} className="my-4">
+      <div className="divider-line border-0 border-t-2 border-brand-black/8" style={{ scaleX: 0 }} />
     </div>
   )
 }
@@ -187,10 +301,9 @@ export default function ModelDetailsSection({ locale }: ModelDetailsSectionProps
               href={`${prefix}/modeles/${row.model.slug}`}
               reverse={row.reverse}
               anchorId={row.anchorId}
+              index={i}
             />
-            {i < rows.length - 1 && (
-              <hr className="border-0 border-t-2 border-brand-black/8 my-4" />
-            )}
+            {i < rows.length - 1 && <DividerLine />}
           </div>
         ))}
       </div>

@@ -12,16 +12,16 @@
   },
   "hero": {
     "eyebrow": "— Nouvelle Collection 2025",
-    "line1": "RIDE",
-    "line2": "BEYOND",
-    "subtitle": "Conçus au Québec pour les routes canadiennes, les quatre saisons, et ceux qui ne s'arrêtent pas.",
+    "line1": "TOUJOURS",
+    "line2": "PLUS LOIN",
+    "subtitle": "Conçus au Québec pour les routes canadiennes et pour ceux qui ne s'arrêtent pas.",
     "cta_primary": "Explorer les modèles",
     "cta_secondary": "Trouver un détaillant",
     "scroll": "SCROLL",
     "title_line1": "Des vélos",
     "title_line2": "d'ici."
   },
-  "band": ["Compano Bikes", "Custom Made", "Titanium & Carbon", "Free Delivery", "Since 2019"],
+  "band": ["Vélos Compano", "Conçus au Québec", "Imaginés pour tous vos besoins", "Assurance VAA", "Depuis 2019"],
   "statement": {
     "line1": "CONÇU POUR",
     "line2": "CEUX QUI",
@@ -45,13 +45,13 @@
     "item4_desc": "Cadence + Torque. L'assistance s'adapte en temps réel à votre effort — naturel et précis."
   },
   "footerCta": {
-    "title": "COMMENCEZ\nVOTRE BUILD",
+    "title": "Commandez votre\nCOMPANO",
     "subtitle": "Choisissez votre Compano. Conçu pour vous, fabriqué pour durer.",
     "cta": "Explorer les modèles"
   },
   "models": {
     "eyebrow": "Nos Modèles",
-    "title": "Quatre vélos.\nUn pour vous.",
+    "title": "Nos Modèles.",
     "compare_cta": "Comparer les modèles",
     "view_cta": "Voir le modèle",
     "tag1": "Route",
@@ -167,7 +167,21 @@
         { "year": "2020", "text": "Lancement commercial des premiers modèles FZ2+ et FZ3+." },
         { "year": "2022", "text": "Expansion du réseau de détaillants à travers le Québec." },
         { "year": "2024", "text": "Lancement du SE2 à batterie intégrée et du RX1+ 48V." }
-      ]
+      ],
+      "hero_subtitle": "Conçu en 2019 à Montréal — pour les routes, les hivers et la législation d'ici.",
+      "origins_title": "Les débuts de Compano",
+      "origins_text": "La marque Compano a été créée en 2019. Avec la très grande connaissance de l'équipe dans le domaine du vélo électrique, des moteurs et des batteries, l'entreprise voulait offrir un vélo électrique de conception Québécoise avec une technologie de pointe, tout en offrant un produit bien adapté pour les besoins, la législation et la réalité Québécoise et Canadienne.",
+      "motor_title": "Moteur adapté pour le Québec",
+      "motor_text1": "Il était très important pour notre équipe d'offrir un produit qui n'était pas un compromis entre les besoins de différents pays, mais vraiment un produit adapté pour le Canada.",
+      "motor_text2": "Notre législation nous permet d'avoir des moteurs puissants, d'offrir un levier d'accélération. Pour cette raison c'est le moteur arrière qui a été choisi. Le moteur arrière lorsqu'assez puissant (350 Watts et +) offre de grands avantages : puissance peu importe notre changement de vitesse, levier d'accélération, diminution de l'usure de la chaîne, facilité de réparation et bien d'autres.",
+      "motor_text3": "Les vélos à assistance électrique Compano ont été développés pour et par des Canadiens au Québec.",
+      "stat1_num": "2019",
+      "stat1_label": "Fondé",
+      "stat2_num": "500W",
+      "stat2_label": "Moteur",
+      "stat3_num": "140 km",
+      "stat3_label": "Autonomie max",
+      "cta_models": "Explorer les modèles"
     },
     "dealers": {
       "eyebrow": "Réseau certifié",
@@ -237,6 +251,34 @@
       "manual_title": "Manuel d'utilisation",
       "manual_desc": "Mode d'emploi complet pour votre vélo Compano. Entretien, réglages, sécurité.",
       "manual_cta": "Voir le manuel"
+    },
+    "product": {
+      "price_label": "Prix",
+      "vaa_badge": "Programme VAA inclus (valeur 300 $+)",
+      "size_label": "Tailles disponibles",
+      "colors_label": "Couleurs disponibles",
+      "find_dealer": "Trouver un revendeur",
+      "description_title": "Description",
+      "range_title": "Autonomie",
+      "range_note": "Poids maximal du cycliste recommandé : 270 lbs. *Le calcul de la distance d'autonomie est basé sur un cycliste de 180 lbs, au niveau 2 d'assistance, à une vitesse de 20 km/h et sur terrain plat.",
+      "specs_title": "Spécifications techniques",
+      "mechanical_title": "Composants mécaniques",
+      "electrical_title": "Composants électriques",
+      "other_models": "Autres modèles",
+      "motor_label": "Moteur",
+      "torque_label": "Couple",
+      "battery_label": "Batterie",
+      "range_assist_label": "Autonomie (assistance)",
+      "range_throttle_label": "Autonomie (accélérateur)",
+      "sensors_label": "Capteurs",
+      "fz2_desc1": "Le Compano FZ2+ est équipé d'un puissant moteur à la roue arrière de 500W, développant 60 Nm de couple. Sa batterie de 36V 13Ah (468Wh) vous offre une autonomie de 90 km en mode assistance* ou 38 km avec l'utilisation de l'accélérateur. Maintenant avec un capteur de cadence et un capteur de torque, c'est un vélo 2 en 1.",
+      "fz2_desc2": "Il est conçu par des Canadiens pour répondre aux besoins des gens et des pistes cyclables d'ici. Sa batterie, située derrière la tige de selle, permet une répartition du poids optimale, un centre de gravité bas, et offre un grand dégagement au niveau du cadre pour faciliter l'embarquement.\n\nIl est équipé de pneus larges faits spécialement pour les vélos à assistance électrique afin de prévenir les crevaisons, d'une large console centrale avec 5 niveaux d'assistance, d'un porte-bagages arrière, de gardes-boue, d'une béquille ultra robuste, d'une selle confortable et de lumières avant et arrière. Le système de freins à disques hydrauliques assure une grande puissance de freinage, les leviers sont munis de coupe-moteur, et la lumière arrière est connectée au système de freinage pour offrir un feu de freinage et assurer un maximum de sécurité.",
+      "fz3_desc1": "Le Compano FZ3+ est équipé d'un puissant moteur à la roue arrière de 500W, développant 60 Nm de couple. Sa batterie de 36V 20Ah (720Wh) vous offre une autonomie de 140 km en mode assistance* ou 50 km avec l'utilisation de l'accélérateur. Maintenant avec un capteur de cadence et un capteur de torque, c'est un vélo 2 en 1.",
+      "fz3_desc2": "Il est conçu par des Canadiens pour répondre aux besoins des gens et des pistes cyclables d'ici. Sa batterie, située derrière la tige de selle, permet une répartition du poids optimale, un centre de gravité bas, et offre un grand dégagement au niveau du cadre pour faciliter l'embarquement.\n\nIl est équipé de pneus larges faits spécialement pour les vélos à assistance électrique afin de prévenir les crevaisons, d'une large console centrale avec 5 niveaux d'assistance, d'un porte-bagages arrière, de gardes-boue, d'une béquille ultra robuste, d'une selle confortable et de lumières avant et arrière. Le système de freins à disques hydrauliques assure une grande puissance de freinage, les leviers sont munis de coupe-moteur, et la lumière arrière est connectée au système de freinage pour offrir un feu de freinage et assurer un maximum de sécurité.",
+      "se2_desc1": "Avec sa batterie entièrement intégrée dans le cadre, le Compano SE2 se démarque des autres vélos électriques. Sa construction légère vous offre la même agilité et le même plaisir de conduite qu'un vélo ordinaire — avec tous les avantages de l'assistance électrique.",
+      "se2_desc2": "Les cellules de haute qualité permettent une recharge ultra-rapide, ce qui en fait le compagnon idéal pour les déplacements urbains et les courses du quotidien. Batterie invisible, design épuré — le SE2 est le vélo électrique pour ceux qui ne veulent pas avoir l'air d'utiliser un vélo électrique.",
+      "rx1_desc1": "Avec sa batterie haute capacité intégrée dans le cadre et amovible par le dessus, le Compano RX1+ se distingue. Équipé d'un moteur 500W développant 60 Nm de couple et d'une batterie 48V 15Ah (720Wh), c'est le choix idéal pour ceux qui ont besoin d'une longue autonomie ou d'une puissance sérieuse pour affronter les côtes les plus abruptes.",
+      "rx1_desc2": "Conçu par des Canadiens pour les routes du Québec. Le cadre du RX1+ offre un grand dégagement pour faciliter l'embarquement, tout en maintenant une rigidité excellente pour un parfait équilibre entre confort, performance et stabilité."
     }
   }
 }
