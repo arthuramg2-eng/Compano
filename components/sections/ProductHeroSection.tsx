@@ -11,6 +11,9 @@ import type { Model } from '@/lib/models'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
+// px of scroll consumed while the hero is pinned
+const HERO_SCROLL_DISTANCE = 700
+
 interface Props {
   model: Model
   locale: string
@@ -31,40 +34,31 @@ export default function ProductHeroSection({ model, locale }: Props) {
   const next = () => setActiveImg((i) => (i + 1) % allImages.length)
 
   useGSAP(() => {
-    const el = bannerRef.current
-    const wm = decorTextRef.current
-    if (!el || !wm) return
+    const banner = bannerRef.current
+    const logo   = decorTextRef.current
+    const nameEl = banner?.querySelector<HTMLElement>('[data-banner-name]')
+    if (!banner || !logo || !nameEl) return
 
-    const nameEl  = el.querySelector('[data-banner-name]')
-    const labelEl = el.querySelector('[data-banner-label]')
+    // État initial : tout invisible
+    gsap.set(logo,   { opacity: 0, x: 0 })
+    gsap.set(nameEl, { opacity: 0, y: 60 })
 
-    // ── État initial ──
-    gsap.set(wm,      { x: '-72vw', opacity: 0 })
-    gsap.set(nameEl,  { opacity: 0, x: 50 })
-    gsap.set(labelEl, { opacity: 0 })
-
-    // ── COMPANO entre au chargement (avant scroll) ──
-    gsap.to(wm, { x: 0, opacity: 1, duration: 0.9, ease: 'expo.out', delay: 0.15 })
-
-    // ── Pin + scrub : COMPANO → FZ3+ au scroll ──
+    // Timeline pilotée par le scroll (scrub = suit le défilement)
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: el,
+        trigger: banner,
         start: 'top top',
-        end: '+=650',
+        end: `+=${HERO_SCROLL_DISTANCE}`,
+        scrub: 1.2,
         pin: true,
-        scrub: 1.8,
-        anticipatePin: 1,
-      }
+        pinSpacing: true,
+      },
     })
 
-    tl
-      .to({}, { duration: 0.35 })                                  // pause — COMPANO full intensité
-      .to(wm,      { opacity: 0, duration: 0.3 })                  // COMPANO s'efface
-      .to(labelEl, { opacity: 1, duration: 0.2 }, '<')             // label apparaît
-      .to(nameEl,  { x: 0, opacity: 1, duration: 0.45 }, '<0.05') // FZ3+ glisse depuis la droite
-      .to({}, { duration: 0.35 })                                  // pause — FZ3+ full intensité
-
+    // Logo : apparaît et glisse vers la gauche
+    tl.to(logo, { opacity: 1, x: '-22vw', ease: 'none', duration: 1 }, 0)
+    // Nom du modèle : apparaît à droite
+    tl.to(nameEl, { opacity: 1, y: 0, ease: 'none', duration: 0.8 }, 0.2)
   }, { scope: bannerRef })
 
   useGSAP(() => {
@@ -93,19 +87,25 @@ export default function ProductHeroSection({ model, locale }: Props) {
     {/* ── Banner hero ── */}
     <div
       ref={bannerRef}
-      className="relative w-full h-[62vh] min-h-[400px] overflow-hidden flex items-end pb-14"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="relative w-full h-screen overflow-hidden flex items-center bg-brand-black"
     >
-      <div className="absolute inset-0 bg-brand-black/88" />
+      {/* Background image */}
+      <Image
+        src="/hero-bg-fz3.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        style={{ opacity: 0.62, objectPosition: 'center 70%' }}
+        priority
+        draggable={false}
+      />
+      {/* Filtre sombre */}
+      <div className="absolute inset-0 bg-brand-black/40" />
 
-      {/* Watermark logo orange — même animation que la hero landing */}
+      {/* Logo Compano */}
       <div
         ref={decorTextRef}
-        className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none select-none"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
         style={{ zIndex: 1 }}
         aria-hidden="true"
       >
@@ -115,20 +115,18 @@ export default function ProductHeroSection({ model, locale }: Props) {
           width={1800}
           height={400}
           className="object-contain"
-          style={{ width: '82vw', opacity: 0.38, userSelect: 'none' }}
+          style={{ width: '52vw', userSelect: 'none' }}
           draggable={false}
           priority
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 lg:px-12 select-none flex flex-col items-end">
-        <p data-banner-label className="font-sans text-[11px] tracking-[0.28em] uppercase text-white/40 mb-4">
-          Compano —
-        </p>
+      {/* Nom du modèle */}
+      <div className="relative z-10 w-full select-none flex flex-col items-end pr-[8vw]">
         <p
           data-banner-name
-          className="font-condensed leading-none uppercase text-orange text-right"
-          style={{ fontSize: 'clamp(80px, 14vw, 200px)', letterSpacing: '-0.02em' }}
+          className="font-condensed leading-none uppercase text-white text-right"
+          style={{ fontSize: 'clamp(100px, 18vw, 260px)', letterSpacing: '-0.02em' }}
         >
           {model.name}
         </p>
@@ -169,7 +167,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
                       src={img}
                       alt={`${model.name} — ${i + 1}`}
                       fill
-                      className="object-cover object-center"
+                      className="object-contain object-center"
                       sizes="(max-width: 1024px) 100vw, calc(100vw - 500px)"
                       priority={i === 0}
                     />

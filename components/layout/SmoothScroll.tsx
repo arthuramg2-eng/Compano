@@ -9,6 +9,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function SmoothScroll() {
   useEffect(() => {
+    // Désactiver la restauration de scroll du navigateur et forcer le haut de page
+    if (typeof history !== 'undefined') {
+      history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,

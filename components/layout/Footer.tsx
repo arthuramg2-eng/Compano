@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 interface FooterProps {
@@ -7,9 +8,14 @@ interface FooterProps {
 
 function CompanoLogo() {
   return (
-    <span className="font-condensed font-black text-[21px] tracking-[6px] uppercase text-white">
-      COMP<span className="text-orange">A</span>NO
-    </span>
+    <Image
+      src="/logo_orange.png"
+      alt="Compano"
+      width={160}
+      height={36}
+      className="object-contain"
+      style={{ height: 36, width: 'auto' }}
+    />
   )
 }
 

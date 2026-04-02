@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
@@ -30,11 +30,19 @@ export default function ProductDetailsSection({ model, locale }: Props) {
   const specsRef = useRef<HTMLDivElement>(null)
   const othersRef = useRef<HTMLDivElement>(null)
   const prefix   = locale === 'en' ? '/en' : ''
+  const [nameHovered, setNameHovered] = useState(false)
   const key      = SLUG_KEY[model.slug] ?? model.slug
   const desc1Key = `${key}_desc1` as Parameters<typeof t>[0]
   const desc2Key = `${key}_desc2` as Parameters<typeof t>[0]
 
   const otherModels = MODELS.filter((m) => m.slug !== model.slug).slice(0, 3)
+
+  // Ajustement de zoom par modèle pour uniformiser la taille apparente du vélo
+  const IMAGE_SCALE: Record<string, number> = {
+    'fz2-plus': 0.88,
+    'se2':      0.84,
+    'rx1-plus': 0.92,
+  }
   const mechSpecs = locale === 'fr' ? model.mechanical_fr : model.mechanical_en
   const elecSpecs = [
     { label: t('motor_label'),           value: model.specs.motor },
@@ -118,47 +126,65 @@ export default function ProductDetailsSection({ model, locale }: Props) {
 
   return (
     <>
-      {/* ── Description — light éditorial ── */}
-      <section ref={descRef} className="bg-white px-5 lg:px-12 pt-20 pb-20">
-        <div className="max-w-[1400px] mx-auto">
-          <div data-desc-line className="h-px bg-brand-black/10 mb-14" />
+      {/* ── Description — éditorial ── */}
+      <section ref={descRef} className="relative bg-white px-5 lg:px-12 pt-20 pb-20 overflow-hidden">
 
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-14 lg:gap-20 items-start">
+        {/* Watermark nom du modèle — gauche, interactif */}
+        <div
+          className="absolute inset-y-0 left-0 flex items-center select-none"
+          style={{ zIndex: 10 }}
+          aria-hidden="true"
+        >
+          <p
+            className="font-condensed uppercase leading-none cursor-default"
+            onMouseEnter={() => setNameHovered(true)}
+            onMouseLeave={() => setNameHovered(false)}
+            style={{
+              fontSize: 'clamp(140px, 22vw, 320px)',
+              letterSpacing: '-0.02em',
+              marginLeft: '-0.04em',
+              color: nameHovered ? '#FF5A00' : 'transparent',
+              WebkitTextStroke: nameHovered ? '0px transparent' : '1.5px rgba(255,90,0,0.18)',
+              textShadow: nameHovered ? '0 0 60px rgba(255,90,0,0.45), 0 0 120px rgba(255,90,0,0.2)' : 'none',
+              transition: 'color 0.35s ease, -webkit-text-stroke 0.35s ease, text-shadow 0.35s ease',
+            }}
+          >
+            {model.name}
+          </p>
+        </div>
 
-            {/* Text block */}
+        <div className="relative max-w-[1400px] mx-auto" style={{ zIndex: 20 }}>
+
+          {/* Ligne de séparation */}
+          <div data-desc-line className="h-px bg-brand-black/10 mb-12" />
+
+          {/* Texte */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20">
             <div>
-              <p data-desc-label className="font-sans text-[11px] tracking-[0.22em] uppercase text-orange mb-6">
+              <p data-desc-label className="font-sans text-[11px] tracking-[0.22em] uppercase text-orange mb-5">
                 — {t('description_title')}
               </p>
-              <p data-desc-title className="font-sans font-semibold text-lg leading-relaxed text-brand-black mb-5">
+              <p data-desc-body className="font-sans font-semibold text-lg leading-relaxed text-brand-black mb-0">
                 {t(desc1Key)}
               </p>
+            </div>
+            <div>
               {t(desc2Key).split('\n\n').map((para, i) => (
-                <p key={i} data-desc-body className="font-sans text-base leading-relaxed text-brand-black/65 mb-4 last:mb-0">
+                <p key={i} data-desc-body className="font-sans text-base leading-relaxed text-brand-black/60 mb-4 last:mb-0">
                   {para}
                 </p>
               ))}
-
-              <div data-desc-range className="mt-10">
-                <p className="font-sans text-[11px] tracking-[0.22em] uppercase text-orange mb-4">
-                  — {t('range_title')}
-                </p>
-                <p className="font-sans text-sm leading-relaxed text-brand-black/50 italic">
-                  {t('range_note')}
-                </p>
-              </div>
             </div>
+          </div>
 
-            {/* Detail photo */}
-            <div data-desc-photo className="relative w-full aspect-[4/3] overflow-hidden">
-              <Image
-                src={detailImage}
-                alt={model.name}
-                fill
-                className="object-contain p-2"
-                sizes="(max-width: 1024px) 100vw, 38vw"
-              />
-            </div>
+          {/* Autonomie */}
+          <div data-desc-range className="mt-12 pt-8 border-t border-brand-black/10">
+            <p className="font-sans text-[11px] tracking-[0.22em] uppercase text-orange mb-3">
+              — {t('range_title')}
+            </p>
+            <p className="font-sans text-sm leading-relaxed text-brand-black/45 italic">
+              {t('range_note')}
+            </p>
           </div>
         </div>
       </section>
@@ -241,12 +267,13 @@ export default function ProductDetailsSection({ model, locale }: Props) {
                     href={href}
                     className="group block bg-[#EFEFED] overflow-hidden transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.10)]"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-brand-lgray2">
+                    <div className={`relative aspect-[4/3] overflow-hidden ${'fz2-plus,fz3-plus,rx1-plus'.includes(m.slug) ? 'bg-white ring-4 ring-white ring-inset' : 'bg-brand-lgray2'}`}>
                       <Image
                         src={m.image}
                         alt={m.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-contain transition-transform duration-700 group-hover:scale-105"
+                        style={{ transform: `scale(${IMAGE_SCALE[m.slug] ?? 1})`, transformOrigin: 'center center' }}
                         sizes="(max-width: 640px) 100vw, 33vw"
                       />
                     </div>
