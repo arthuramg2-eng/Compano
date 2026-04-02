@@ -61,7 +61,7 @@ export default function AboutStorySection({ locale }: Props) {
 
       // ── Origins block ─────────────────────────────────────────────────
       gsap.fromTo(
-        originsRef.current?.querySelectorAll('h2, p'),
+        originsRef.current!.querySelectorAll('h2, p'),
         { y: 30, opacity: 0 },
         {
           y: 0,
