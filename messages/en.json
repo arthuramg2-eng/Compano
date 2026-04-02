@@ -8,7 +8,8 @@
     "dealers": "Find a dealer",
     "dealers_short": "Dealers",
     "warranty": "Warranty",
-    "register": "Registration"
+    "register": "Registration",
+    "contact": "Contact us"
   },
   "hero": {
     "eyebrow": "— New Collection 2025",
@@ -241,16 +242,69 @@
       "dealers_link": "Find a dealer",
       "privacy": "Your data is protected under PIPEDA (Canada). We never sell your personal information."
     },
+    "garantie": {
+      "hero_eyebrow": "— VAA Program",
+      "hero_title": "Protected by\nVelec.",
+      "hero_subtitle": "When you purchase a Compano e-bike, you're automatically enrolled in the VAA program — theft protection and unlimited roadside assistance across Canada.",
+      "intro": "Dear current and future customers, we are pleased to announce that with the purchase of a Compano electric bike, you are eligible for the VAA program.",
+      "velec_title": "Compano bikes are powered and protected by Velec.",
+      "velec_desc1": "All Compano e-bike riders now benefit from unlimited roadside assistance, anywhere in Canada.",
+      "velec_desc2": "New Compano owners also receive, completely free of charge, 3-year theft protection from the date of purchase, retroactively from January 1st, 2023.",
+      "antivol_title": "VAA Theft Protection",
+      "antivol_faq": [
+        { "q": "How much does the VAA theft protection cost?", "a": "The VAA program offers this protection to new Compano owners FREE OF CHARGE, because we know how much our customers love their e-bikes." },
+        { "q": "Who is eligible for the VAA theft protection?", "a": "The original owner of a new Compano e-bike purchased in Canada on or after January 1st, 2023 is eligible for the protection. It is non-transferable upon resale of the bike." },
+        { "q": "What does the theft protection cover?", "a": "The protection covers, for a period of three (3) years from the date of purchase, the theft of the complete Compano e-bike — bike, battery, and original accessories included. Theft of one or more individual components is not covered. Coverage applies to thefts on Canadian territory only." },
+        { "q": "What documents are required to file a theft claim?", "a": "A police report for the theft event, the original proof of purchase, the serial numbers of the Compano bike and battery, and any other relevant information requested by the service agent." },
+        { "q": "What is the procedure to file a theft claim?", "a": "The first step is to contact the service line at 1-833-718-4001 to report the theft. You must then notify Compano by visiting www.compano.ca/en/vaa. You will need to provide your claim number and the dealer where you wish to pick up your replacement bike. This step is necessary to allow us to build a database of stolen Compano bikes." },
+        { "q": "What is the procedure for delivering a replacement bike to my dealer?", "a": "Following claim approval, Compano will arrange shipment of a replacement bike to your chosen dealer. The dealer will be notified of the shipment and will assemble the bike upon reception. You will be notified by the store when your bike is ready for pickup." },
+        { "q": "Is there a deductible to pay?", "a": "No, you will not have to pay a deductible when receiving your replacement bike. The protection is entirely provided by the VAA program." },
+        { "q": "What does the theft protection provide?", "a": "The protection results in the replacement of a new Compano equivalent to the original bike. No cash reimbursement will be made." },
+        { "q": "What is a Compano equivalent?", "a": "The preferred option is replacement with the original Compano model or its equivalent. However, colour may vary." },
+        { "q": "How do I enroll in the VAA theft protection?", "a": "Simple! Just register your Compano on our website at www.compano.ca/en/registration. If you are eligible for VAA theft protection based on your purchase date, you will be automatically enrolled and your bike will have theft protection." },
+        { "q": "What are the limitations of the VAA theft protection?", "a": "Replacement in case of theft is limited to one event over the three (3) year period from the original bike's purchase date. The replacement bike is not covered by the protection. Accessories added to the bike, as well as personal effects stolen with the bike, are not covered." }
+      ],
+      "assistance_title": "VAA Roadside Assistance",
+      "assistance_faq": [
+        { "q": "How much does the VAA roadside assistance service cost?", "a": "It's free! The VAA program provides this service to happy Compano owners, because we know how much you love riding your e-bike." },
+        { "q": "When is this service available?", "a": "Anytime! The VAA Roadside Assistance service is available 7 days a week, 24 hours a day!" },
+        { "q": "Where is the Velec roadside assistance service available?", "a": "Anywhere across Canada! Coverage is nationwide — wherever you are in the country, you're covered when riding a Compano. The service is available only on roads accessible by vehicle. The VAA Assistance service cannot access bike paths." },
+        { "q": "What number should I call if I need roadside assistance?", "a": "The toll-free number is 1-833-718-4001. It's the same number for both roadside assistance and theft protection." },
+        { "q": "Is there a maximum towing distance?", "a": "Towing within a 35 km radius from the pickup point is offered free to Compano owners. You choose your destination within that perimeter — your vehicle, home, a dealer, or a transit station. Towing beyond 35 km is possible, but a per-kilometre rate will apply. Rates vary by region." },
+        { "q": "Is there a usage limit for the VAA roadside assistance?", "a": "There is no limit on the number of service calls. Even if you're the unluckiest cyclist in the world, we'll come get you! Roadside assistance covers mechanical and electrical breakdowns, flat tires, and battery depletion. Rider fatigue or bad weather (rain, cold, etc.) are not valid reasons for a pickup." },
+        { "q": "Does the roadside service offer other services?", "a": "The roadside service brings you and your Compano safely to your destination. No repairs, battery charging, or bike unlocking are performed. The service is not required to accommodate a pet — please mention it when you call if you are travelling with an animal." },
+        { "q": "I'm a Compano owner, but I need roadside assistance for a different bike. Do I have access to VAA roadside assistance?", "a": "No, unfortunately. Only Compano e-bikes and their riders are eligible for VAA roadside assistance." }
+      ]
+    },
     "tools": {
-      "eyebrow": "Tools",
-      "title": "Compano\nResources.",
-      "subtitle": "Guides, manuals, and tools to get the most from your Compano bike.",
-      "guide_title": "2025 Buying Guide",
-      "guide_desc": "Everything you need to know to choose your Compano e-bike: model comparison, maintenance tips, Canadian regulations.",
-      "guide_cta": "Download the guide",
-      "manual_title": "Owner's Manual",
-      "manual_desc": "Complete user guide for your Compano bike. Maintenance, adjustments, safety.",
-      "manual_cta": "View manual"
+      "eyebrow": "— Resources",
+      "title": "Everything\nyou need.",
+      "subtitle": "Guides, manuals, and resources to get the most from your Compano e-bike.",
+"guides_eyebrow": "— Owner's Guides",
+      "guides_consult": "View",
+      "guides_download": "Download",
+      "guides": [
+        {
+          "label": "Owner's Guide 2023 – 24",
+          "href_consult": "/en/guide/2023",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-FR.pdf"
+        },
+        {
+          "label": "Owner's Guide 2022",
+          "href_consult": "/en/guide/2022",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-FR.pdf"
+        },
+        {
+          "label": "Owner's Guide 2021",
+          "href_consult": "/en/guide/2021",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202021FR_03.pdf"
+        },
+        {
+          "label": "Owner's Guide 2020",
+          "href_consult": "/en/guide/2020",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202020FR_V4_24_2020.pdf"
+        }
+      ]
     },
     "product": {
       "price_label": "Price",
@@ -279,6 +333,21 @@
       "se2_desc2": "High-quality battery cells enable ultra-fast charging, making it the perfect companion for urban rides and daily errands. Invisible battery, clean design — the SE2 is the e-bike for those who don't want to look like they're riding an e-bike.",
       "rx1_desc1": "With its high-capacity battery integrated into the frame and removable from the top, the Compano RX1+ stands apart. Equipped with a 500W motor delivering 60Nm of torque and a 48V 15Ah (720Wh) battery, it's the ideal choice for those who need long range or serious power to tackle the steepest hills.",
       "rx1_desc2": "Designed by Canadians for Québec roads. The RX1+ frame engineering ensures easy step-through access while maintaining excellent rigidity for a perfect blend of comfort, performance, and stability."
+    },
+    "contact": {
+      "eyebrow": "— Contact",
+      "title": "Get in\ntouch.",
+      "subtitle": "A question? Write to us directly.",
+      "notice": "* Please note that all after-sales service, including repairs, warranty claims, and spare parts must go through your Compano dealer. If your question is about this, please contact the dealer where you purchased your Compano.",
+      "form_title": "Contact us",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone number",
+      "message": "Your message",
+      "submit": "Submit",
+      "success_title": "Message sent",
+      "success_msg": "Thank you for reaching out. We will get back to you as soon as possible.",
+      "error_msg": "An error occurred. Please try again later."
     }
   }
 }

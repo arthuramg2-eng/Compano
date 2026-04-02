@@ -3,14 +3,16 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import Image from 'next/image'
 
 interface Props {
   eyebrow: string
   title: string
   subtitle: string
+  imageSrc?: string
 }
 
-export default function ModelsPageHero({ eyebrow, title, subtitle }: Props) {
+export default function ModelsPageHero({ eyebrow, title, subtitle, imageSrc }: Props) {
   const containerRef = useRef<HTMLElement>(null)
 
   useGSAP(
@@ -39,28 +41,43 @@ export default function ModelsPageHero({ eyebrow, title, subtitle }: Props) {
   )
 
   return (
-    <section ref={containerRef} className="bg-white pt-[120px] pb-16 px-5 lg:px-12">
-      <div className="max-w-[1400px] mx-auto">
-        <p
-          className="hero-eyebrow font-sans text-[11px] tracking-[0.32em] uppercase text-orange font-medium mb-4"
-          style={{ opacity: 0 }}
-        >
-          {eyebrow}
-        </p>
-        <div className="overflow-hidden">
-          <h1
-            className="hero-title font-condensed uppercase text-brand-black whitespace-pre-line mb-5"
-            style={{ fontSize: 'clamp(52px, 7vw, 100px)', lineHeight: '0.92', opacity: 0 }}
+    <section ref={containerRef} className="bg-white pt-[120px] pb-8 px-5 lg:px-12">
+      <div className={`max-w-[1400px] mx-auto ${imageSrc ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}`}>
+        <div>
+          <p
+            className="hero-eyebrow font-sans text-[11px] tracking-[0.32em] uppercase text-orange font-medium mb-4"
+            style={{ opacity: 0 }}
           >
-            {title}
-          </h1>
+            {eyebrow}
+          </p>
+          <div className="overflow-hidden">
+            <h1
+              className="hero-title font-condensed uppercase text-brand-black whitespace-pre-line mb-5"
+              style={{ fontSize: 'clamp(52px, 7vw, 100px)', lineHeight: '0.92', opacity: 0 }}
+            >
+              {title}
+            </h1>
+          </div>
+          <p
+            className="hero-subtitle font-sans font-light text-brand-black/50 text-[15px] leading-[1.75] max-w-[520px]"
+            style={{ opacity: 0 }}
+          >
+            {subtitle}
+          </p>
         </div>
-        <p
-          className="hero-subtitle font-sans font-light text-brand-black/50 text-[15px] leading-[1.75] max-w-[520px]"
-          style={{ opacity: 0 }}
-        >
-          {subtitle}
-        </p>
+
+        {imageSrc && (
+          <div className="hero-subtitle relative w-full h-[320px] lg:h-[420px] overflow-hidden" style={{ opacity: 0 }}>
+            <Image
+              src={imageSrc}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        )}
       </div>
     </section>
   )

@@ -60,10 +60,10 @@ export default function Header({ locale }: HeaderProps) {
   }, [scrolled, isProductPage])
 
   const navLinks = [
-    { href: `${prefix}/modeles`,            label: t('models')        },
-    { href: `${prefix}/a-propos`,            label: t('about')         },
-    { href: `${prefix || '/'}#garantie`,    label: t('warranty')      },
-    { href: `${prefix || '/'}#detaillants`, label: t('dealers_short') },
+    { href: `${prefix}/modeles`,  label: t('models')   },
+    { href: `${prefix}/a-propos`, label: t('about')    },
+    { href: `${prefix}/outils`,   label: t('tools')    },
+    { href: `${prefix}/garantie`, label: t('warranty') },
   ]
 
   return (
@@ -123,6 +123,15 @@ export default function Header({ locale }: HeaderProps) {
 
           {/* Right — lang + CTA */}
           <div className="hidden lg:flex items-center justify-end gap-5">
+            <Link
+              href={`${prefix}/nous-joindre`}
+              className="nav-link-underline relative h-full flex items-center font-sans text-[11px] tracking-[0.24em] uppercase font-medium transition-colors duration-200"
+              style={{ color: 'rgba(10,10,10,0.45)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#0A0A0A')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(10,10,10,0.45)')}
+            >
+              {t('contact')}
+            </Link>
             <LangSwitcher locale={locale} />
             <Link
               href={`${prefix || '/'}#detaillants`}
@@ -155,7 +164,7 @@ export default function Header({ locale }: HeaderProps) {
           onClick={() => setMobileOpen(false)}
         >
           <nav className="flex flex-col gap-0">
-            {navLinks.map((link) => (
+            {[...navLinks, { href: `${prefix}/nous-joindre`, label: t('contact') }].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

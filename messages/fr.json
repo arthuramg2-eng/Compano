@@ -8,7 +8,8 @@
     "dealers": "Trouver un détaillant",
     "dealers_short": "Détaillants",
     "warranty": "Garantie",
-    "register": "Enregistrement"
+    "register": "Enregistrement",
+    "contact": "Nous joindre"
   },
   "hero": {
     "eyebrow": "— Nouvelle Collection 2025",
@@ -241,16 +242,69 @@
       "dealers_link": "Trouver un détaillant",
       "privacy": "Vos données sont protégées conformément à la Loi 25 (Québec) et à la LPRPDE (Canada). Nous ne vendons jamais vos informations personnelles."
     },
+    "garantie": {
+      "hero_eyebrow": "— Programme VAA",
+      "hero_title": "Protégé par\nVelec.",
+      "hero_subtitle": "À l'achat d'un vélo à assistance électrique Compano, vous êtes éligible au programme VAA — protection antivol et assistance routière illimitée partout au Canada.",
+      "intro": "Chers clients actuels ou futurs, il nous fait grand plaisir de vous annoncer qu'à l'achat d'un vélo à assistance électrique Compano, vous êtes éligible au programme VAA.",
+      "velec_title": "Les vélos Compano sont propulsés et protégés par Velec.",
+      "velec_desc1": "Tous les utilisateurs de vélos à assistance électrique Compano bénéficient maintenant d'une assistance routière illimitée, et ce, partout au Canada.",
+      "velec_desc2": "Les nouveaux propriétaires de vélos Compano obtiennent également, tout à fait gratuitement, une protection en cas de vol de 3 ans suivant la date d'achat, et ce rétroactivement au 1er janvier 2023.",
+      "antivol_title": "La protection antivol VAA",
+      "antivol_faq": [
+        { "q": "Combien coûte la protection antivol VAA ?", "a": "Le programme VAA offre cette protection aux nouveaux propriétaires de Compano GRATUITEMENT, car nous savons à quel point nos clients aiment leurs vélos à assistance électrique." },
+        { "q": "Qui est éligible à la protection antivol VAA ?", "a": "Le propriétaire d'origine d'un vélo neuf à assistance électrique Compano acheté au Canada à partir du 1er janvier 2023 est éligible à la protection. Celle-ci n'est pas transférable lors de la revente du vélo." },
+        { "q": "Que couvre la protection antivol ?", "a": "La protection couvre, pour une période de trois (3) ans à partir de la date d'achat, le vol du vélo électrique Compano complet soit vélo et batterie incluant les accessoires d'origine fournis avec le vélo Compano d'origine. Le vol d'un ou plusieurs composants n'est pas couvert. La protection couvre les vols sur le territoire du Canada uniquement." },
+        { "q": "Quels sont les documents nécessaires pour compléter une réclamation en cas de vol ?", "a": "Un rapport de police de l'événement de vol, la preuve d'achat originale du vélo, les numéros de série du vélo Compano et de la batterie, ainsi que toute autre information pertinente au dossier demandée par l'agent de service." },
+        { "q": "Quelle est la procédure pour faire une réclamation en cas de vol ?", "a": "La première étape est de contacter la ligne de service au 1-833-718-4001 pour les informer du vol du vélo. Vous devrez ensuite aviser Compano du vol de votre vélo en visitant le www.compano.ca/fr/vaa. Vous devrez communiquer votre numéro de réclamation et le détaillant où vous désirez récupérer votre vélo de remplacement. Cette étape est nécessaire pour que nous puissions créer une base de données des vélos Compano volés." },
+        { "q": "Quelle est la procédure de livraison d'un vélo de remplacement chez mon détaillant ?", "a": "En réponse à l'approbation de la réclamation, Compano préparera l'expédition d'un vélo de remplacement chez votre détaillant choisi lors de la réclamation. Le détaillant sera avisé de l'expédition et devra, à la réception de celui-ci, procéder à l'assemblage. Vous serez avisé par le magasin lorsque votre vélo sera prêt pour le ramassage." },
+        { "q": "Y a-t-il une franchise à payer ?", "a": "Non, vous n'aurez pas à débourser un montant d'argent pour la franchise lors du remplacement du vélo. La protection est entièrement offerte par le programme VAA." },
+        { "q": "Que donne la protection en cas de vol ?", "a": "La protection s'effectue par le remplacement d'un Compano neuf, équivalent au vélo d'origine. Aucun remboursement en argent ne sera effectué." },
+        { "q": "Qu'est-ce qu'un Compano équivalent ?", "a": "L'option privilégiée est le remplacement du vélo Compano par le modèle d'origine ou équivalent. Toutefois, la couleur peut varier." },
+        { "q": "Quoi faire pour souscrire à la protection antivol VAA ?", "a": "Rien de plus simple ! Il suffit d'enregistrer le vélo Compano sur notre site internet, en visitant le www.compano.ca/fr/enregistrement. Si vous êtes éligible à la protection antivol VAA selon la date d'achat de votre vélo, vous serez automatiquement inscrit et votre vélo aura la protection antivol." },
+        { "q": "Quelles sont les limitations de la protection antivol VAA ?", "a": "Le remplacement en cas de vol est limité à un événement au cours de la période de trois (3) ans suivant la date d'achat du vélo original. Le vélo de remplacement n'est pas couvert par la protection. Les accessoires ajoutés au vélo, de même que les effets personnels volés avec le vélo, ne sont pas couverts par la protection." }
+      ],
+      "assistance_title": "L'assistance routière VAA",
+      "assistance_faq": [
+        { "q": "Combien coûte le service d'assistance routière VAA ?", "a": "C'est gratuit ! Le programme VAA offre ce service aux heureux propriétaires de Compano, car nous savons à quel point vous aimez rouler votre vélo à assistance électrique." },
+        { "q": "Quand ce service est-il disponible ?", "a": "En tout temps ! Le service d'assistance routière VAA est offert 7 jours sur 7, 24 heures sur 24 !" },
+        { "q": "Où le service d'assistance routière Velec est-il disponible ?", "a": "Partout à travers le Canada ! La couverture du dépannage est nationale — où que vous soyez au pays, vous y avez droit lorsque vous roulez un Compano. Le service est offert uniquement sur les voies circulables en voiture. Le service d'assistance VAA ne peut pas aller sur les pistes cyclables." },
+        { "q": "Quel est le numéro à appeler si j'ai besoin d'assistance routière ?", "a": "Le numéro sans frais est le 1-833-718-4001. C'est le même numéro pour l'assistance routière que pour la protection en cas de vol." },
+        { "q": "Y a-t-il une distance maximale au dépannage ?", "a": "Le dépannage dans un rayon de 35 km du point de rencontre est offert gratuitement aux propriétaires de Compano. Vous choisissez votre destination à l'intérieur de ce périmètre, que ce soit votre véhicule, la maison, un détaillant ou une station de transport en commun. Le dépannage au-delà de 35 km est possible, mais un taux ($) au kilomètre supplémentaire s'appliquera. Le taux est variable en fonction des régions." },
+        { "q": "Y a-t-il une limite d'utilisation du service d'assistance routière VAA ?", "a": "Le nombre de dépannages est illimité. Même si vous êtes le cycliste le plus malchanceux du monde, nous viendrons vous chercher ! L'assistance routière est offerte en cas de bris mécanique, électrique, de crevaison ou de panne de batterie. La fatigue du cycliste ou la mauvaise météo (pluie, froid, etc.) ne sont pas des raisons valables de raccompagnement." },
+        { "q": "Le dépannage offre-t-il d'autres services ?", "a": "Le dépannage vous raccompagne, vous et votre Compano, à bon port. Il n'effectue aucune réparation, ni service de recharge ou de déverrouillage de vélo. Rien n'oblige l'assistance routière à embarquer un animal de compagnie — veuillez le mentionner lors de l'appel lorsque vous voyagez avec votre animal." },
+        { "q": "Je suis propriétaire d'un Compano, mais j'ai besoin de dépannage avec un autre vélo. Ai-je accès au dépannage VAA ?", "a": "Non, malheureusement. Seulement les vélos à assistance électrique Compano et leur utilisateur peuvent profiter du dépannage VAA sur la route." }
+      ]
+    },
     "tools": {
-      "eyebrow": "Outils",
-      "title": "Ressources\nCompano.",
-      "subtitle": "Guides, manuels et outils pour tirer le meilleur de votre vélo Compano.",
-      "guide_title": "Guide d'achat 2025",
-      "guide_desc": "Tout ce que vous devez savoir pour choisir votre vélo électrique Compano : comparatif des modèles, conseils d'entretien, législation canadienne.",
-      "guide_cta": "Télécharger le guide",
-      "manual_title": "Manuel d'utilisation",
-      "manual_desc": "Mode d'emploi complet pour votre vélo Compano. Entretien, réglages, sécurité.",
-      "manual_cta": "Voir le manuel"
+      "eyebrow": "— Ressources",
+      "title": "Tout ce qu'il\nvous faut.",
+      "subtitle": "Guides, manuels et ressources pour tirer le meilleur de votre vélo Compano.",
+"guides_eyebrow": "— Guides du propriétaire",
+      "guides_consult": "Consulter",
+      "guides_download": "Télécharger",
+      "guides": [
+        {
+          "label": "Guide du propriétaire 2023 – 24",
+          "href_consult": "/guide/2023",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-FR.pdf"
+        },
+        {
+          "label": "Guide du propriétaire 2022",
+          "href_consult": "/guide/2022",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-FR.pdf"
+        },
+        {
+          "label": "Guide du propriétaire 2021",
+          "href_consult": "/guide/2021",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202021FR_03.pdf"
+        },
+        {
+          "label": "Guide du propriétaire 2020",
+          "href_consult": "/guide/2020",
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202020FR_V4_24_2020.pdf"
+        }
+      ]
     },
     "product": {
       "price_label": "Prix",
@@ -279,6 +333,21 @@
       "se2_desc2": "Les cellules de haute qualité permettent une recharge ultra-rapide, ce qui en fait le compagnon idéal pour les déplacements urbains et les courses du quotidien. Batterie invisible, design épuré — le SE2 est le vélo électrique pour ceux qui ne veulent pas avoir l'air d'utiliser un vélo électrique.",
       "rx1_desc1": "Avec sa batterie haute capacité intégrée dans le cadre et amovible par le dessus, le Compano RX1+ se distingue. Équipé d'un moteur 500W développant 60 Nm de couple et d'une batterie 48V 15Ah (720Wh), c'est le choix idéal pour ceux qui ont besoin d'une longue autonomie ou d'une puissance sérieuse pour affronter les côtes les plus abruptes.",
       "rx1_desc2": "Conçu par des Canadiens pour les routes du Québec. Le cadre du RX1+ offre un grand dégagement pour faciliter l'embarquement, tout en maintenant une rigidité excellente pour un parfait équilibre entre confort, performance et stabilité."
+    },
+    "contact": {
+      "eyebrow": "— Contact",
+      "title": "Nous\njoindre.",
+      "subtitle": "Une question ? Écrivez-nous directement.",
+      "notice": "* Veuillez noter que tout le service après-vente, incluant les réparations, les cas de garanties et les pièces de rechange doit passer par votre détaillant Compano. Si votre question est à ce propos, contactez le détaillant chez qui vous avez acheté votre Compano.",
+      "form_title": "Nous contacter",
+      "name": "Nom",
+      "email": "Courriel",
+      "phone": "Numéro de téléphone",
+      "message": "Votre message",
+      "submit": "Soumettre",
+      "success_title": "Message envoyé",
+      "success_msg": "Merci de nous avoir contacté. Nous vous répondrons dans les plus brefs délais.",
+      "error_msg": "Une erreur est survenue. Veuillez réessayer plus tard."
     }
   }
 }
