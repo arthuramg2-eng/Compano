@@ -98,7 +98,7 @@ export default function FeaturesSection() {
   return (
     <section
       ref={containerRef}
-      className="bg-white py-28 px-6 lg:px-12 overflow-hidden"
+      className="bg-white pt-12 pb-28 px-6 lg:px-12 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 

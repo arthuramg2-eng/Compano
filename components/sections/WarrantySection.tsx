@@ -16,13 +16,6 @@ const WARRANTY_IMAGES = [
   'https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/dms3rep/multi/garantie-cadre.jpg',
 ]
 
-// top accent gradients: muted → orange mid → orange vibrant
-const TOP_ACCENTS = [
-  'linear-gradient(to right, #DEDAD4, #DEDAD4)',
-  'linear-gradient(to right, #CC5600, #E06010)',
-  'linear-gradient(to right, #CC5600, #FF7C28)',
-]
-
 export default function WarrantySection() {
   const t = useTranslations('warranty')
   const containerRef = useRef<HTMLDivElement>(null)
@@ -38,17 +31,54 @@ export default function WarrantySection() {
 
   useGSAP(
     () => {
+      // Header: fade + slide up
       if (headerRef.current) {
-        gsap.fromTo(headerRef.current, { opacity: 0, y: 22 }, {
-          opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
-          scrollTrigger: { trigger: headerRef.current, start: 'top 88%' },
-        })
+        gsap.fromTo(
+          headerRef.current,
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.85, ease: 'expo.out',
+            scrollTrigger: { trigger: headerRef.current, start: 'top 90%' },
+          }
+        )
       }
+
       if (cardsRef.current) {
-        const cards = cardsRef.current.querySelectorAll('.warranty-card')
-        gsap.fromTo(cards, { opacity: 0, y: 48 }, {
-          opacity: 1, y: 0, duration: 0.7, stagger: 0.13, ease: 'power3.out',
-          scrollTrigger: { trigger: cardsRef.current, start: 'top 82%' },
+        const cards = Array.from(cardsRef.current.querySelectorAll('.warranty-card'))
+
+        // Cards stagger: slide up + clip reveal
+        cards.forEach((card, i) => {
+          gsap.fromTo(
+            card,
+            { y: 60, opacity: 0, clipPath: 'inset(8% 0 0 0)' },
+            {
+              y: 0, opacity: 1, clipPath: 'inset(0% 0 0 0)',
+              duration: 0.85, ease: 'expo.out',
+              delay: i * 0.1,
+              scrollTrigger: { trigger: cardsRef.current, start: 'top 78%' },
+            }
+          )
+        })
+
+        // Image parallax inside each card on scroll
+        cards.forEach((card) => {
+          const img = card.querySelector('.warranty-img')
+          if (!img) return
+          gsap.fromTo(
+            img,
+            { y: -20 },
+            {
+              y: 20,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+              },
+            }
+          )
         })
       }
     },
@@ -56,10 +86,11 @@ export default function WarrantySection() {
   )
 
   return (
-    <section ref={containerRef} className="bg-brand-cream py-28 px-5 lg:px-10">
+    <section ref={containerRef} className="bg-white pt-28 pb-12 px-5 lg:px-10">
       <div className="max-w-[1280px] mx-auto">
+
         {/* Header */}
-        <div ref={headerRef} className="opacity-0 mb-14">
+        <div ref={headerRef} className="mb-14 opacity-0">
           <Eyebrow>{t('eyebrow')}</Eyebrow>
           <h2
             className="font-condensed font-black uppercase text-brand-black whitespace-pre-line"
@@ -75,25 +106,22 @@ export default function WarrantySection() {
             <div
               key={i}
               className="warranty-card group relative bg-white overflow-hidden opacity-0"
-              style={{ boxShadow: '0 2px 32px rgba(0,0,0,0.055)' }}
+              style={{ boxShadow: 'none' }}
             >
-              {/* Top accent bar */}
-              <div className="h-[3px]" style={{ background: TOP_ACCENTS[i] }} />
-
-              {/* Image */}
-              <div className="relative h-[138px] overflow-hidden">
+              {/* Image — taller, object-contain to dezoom */}
+              <div className="relative h-[220px] overflow-hidden bg-white">
                 <Image
                   src={WARRANTY_IMAGES[i]}
                   alt={item.title}
                   fill
-                  className="object-cover grayscale-[15%] group-hover:scale-[1.05] transition-transform duration-600 ease-out"
+                  className="warranty-img object-contain p-6 grayscale-[10%] group-hover:scale-[1.04] transition-transform duration-700 ease-out"
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.18))' }}
+                  style={{ transformOrigin: 'center center' }}
                 />
               </div>
+
+              {/* Thin separator */}
+              <div className="h-px bg-brand-black/6" />
 
               {/* Content */}
               <div className="p-10 pb-12">
@@ -110,9 +138,6 @@ export default function WarrantySection() {
                   {item.desc}
                 </p>
               </div>
-
-              {/* Border on hover */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-orange/18 transition-colors duration-400 pointer-events-none" />
             </div>
           ))}
         </div>

@@ -166,8 +166,8 @@ export const MODELS: Model[] = [
     size_en: 'Small low bar · Small-med low bar · Medium high bar · Large high bar',
     pills_fr: ['350W', '36V 7Ah', '55 km'],
     pills_en: ['350W', '36V 7Ah', '34 mi'],
-    desc_fr: 'Le SE2 inclut un chargeur 4A — 80 % de la batterie en 90 min. Malgré son poids ultra-léger de 19 kg, il embarque un moteur silencieux 350 W et une batterie LG 36V/7Ah pour 55 km en assistance ou 25 km au levier. Freins à disques hydrauliques avec coupe-moteur, lumières LED, béquille, garde-boue et porte-bagages. Cadre aluminium 6061. Conception québécoise.',
-    desc_en: 'The SE2 includes a 4A charger — 80% battery in 90 min. Despite its ultra-light 19 kg frame, it packs a silent 350W motor and a 36V/7Ah LG battery for 55 km on assist or 25 km on throttle. Hydraulic disc brakes with motor cutoff, LED lights, kickstand, fenders and rear rack. 6061 aluminum frame. Quebec-designed.',
+    desc_fr: 'Moteur 350W silencieux, batterie LG 36V/7Ah. Chargeur 4A — 80 % en 90 min. 19 kg. Conception québécoise.',
+    desc_en: '350W silent motor, 36V/7Ah LG battery. 4A charger — 80% in 90 min. 19 kg. Quebec-designed.',
     specs: {
       motor: '350W sans brosse (roue arrière)',
       torque: '40 Nm',
