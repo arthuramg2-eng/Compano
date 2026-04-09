@@ -1,18 +1,10 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useTranslations } from 'next-intl'
 import type { Model } from '@/lib/models'
-
-gsap.registerPlugin(useGSAP, ScrollTrigger)
-
-// px of scroll consumed while the hero is pinned
-const HERO_SCROLL_DISTANCE = 700
 
 interface Props {
   model: Model
@@ -21,9 +13,6 @@ interface Props {
 
 export default function ProductHeroSection({ model, locale }: Props) {
   const t = useTranslations('pages.product')
-  const infoRef      = useRef<HTMLDivElement>(null)
-  const bannerRef    = useRef<HTMLDivElement>(null)
-  const decorTextRef = useRef<HTMLDivElement>(null)
   const prefix = locale === 'en' ? '/en' : ''
 
   const colors = locale === 'fr' ? model.specs.colors_fr : model.specs.colors_en
@@ -32,46 +21,6 @@ export default function ProductHeroSection({ model, locale }: Props) {
 
   const prev = () => setActiveImg((i) => (i - 1 + allImages.length) % allImages.length)
   const next = () => setActiveImg((i) => (i + 1) % allImages.length)
-
-  useGSAP(() => {
-    const banner = bannerRef.current
-    const logo   = decorTextRef.current
-    const nameEl = banner?.querySelector<HTMLElement>('[data-banner-name]')
-    if (!banner || !logo || !nameEl) return
-
-    // État initial : tout invisible
-    gsap.set(logo,   { opacity: 0, x: 0 })
-    gsap.set(nameEl, { opacity: 0, y: 60 })
-
-    // Timeline pilotée par le scroll (scrub = suit le défilement)
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: banner,
-        start: 'top top',
-        end: `+=${HERO_SCROLL_DISTANCE}`,
-        scrub: 1.2,
-        pin: true,
-        pinSpacing: true,
-      },
-    })
-
-    // Logo : apparaît et glisse vers la gauche
-    tl.to(logo, { opacity: 1, x: '-22vw', ease: 'none', duration: 1 }, 0)
-    // Nom du modèle : apparaît à droite
-    tl.to(nameEl, { opacity: 1, y: 0, ease: 'none', duration: 0.8 }, 0.2)
-  }, { scope: bannerRef })
-
-  useGSAP(() => {
-    const el = infoRef.current
-    if (!el) return
-    const items = el.querySelectorAll('[data-fade]')
-    gsap.fromTo(
-      items,
-      { y: 24, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.7, stagger: 0.08, ease: 'expo.out',
-        scrollTrigger: { trigger: el, start: 'top 80%', once: true } }
-    )
-  }, { scope: infoRef })
 
   const electricalSpecs = [
     { label: t('motor_label'),           value: model.specs.motor },
@@ -85,10 +34,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
   return (
     <>
     {/* ── Banner hero ── */}
-    <div
-      ref={bannerRef}
-      className="relative w-full h-screen overflow-hidden flex items-center bg-brand-black"
-    >
+    <div className="relative w-full overflow-hidden flex items-center justify-center bg-brand-black" style={{ height: '55vh' }}>
       {/* Background image */}
       <Image
         src="/hero-bg-fz3.jpg"
@@ -102,34 +48,24 @@ export default function ProductHeroSection({ model, locale }: Props) {
       {/* Filtre sombre */}
       <div className="absolute inset-0 bg-brand-black/40" />
 
-      {/* Logo Compano */}
-      <div
-        ref={decorTextRef}
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-        style={{ zIndex: 1 }}
-        aria-hidden="true"
-      >
-        <Image
-          src="/logo_orange.png"
-          alt=""
-          width={1800}
-          height={400}
-          className="object-contain"
-          style={{ width: '52vw', userSelect: 'none' }}
-          draggable={false}
-          priority
-        />
-      </div>
-
-      {/* Nom du modèle */}
-      <div className="relative z-10 w-full select-none flex flex-col items-end pr-[8vw]">
+      {/* Nom du modèle + Compano centrés */}
+      <div className="relative z-10 flex flex-col items-center select-none">
         <p
-          data-banner-name
-          className="font-condensed leading-none uppercase text-white text-right"
+          className="font-condensed leading-none uppercase text-white text-center"
           style={{ fontSize: 'clamp(100px, 18vw, 260px)', letterSpacing: '-0.02em' }}
         >
           {model.name}
         </p>
+        <Image
+          src="/logo_orange.png"
+          alt="Compano"
+          width={1800}
+          height={400}
+          className="object-contain"
+          style={{ width: 'clamp(160px, 22vw, 340px)', userSelect: 'none' }}
+          draggable={false}
+          priority
+        />
       </div>
     </div>
 
@@ -180,7 +116,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
                 <div className="absolute inset-0 flex items-center justify-between px-3 z-10 pointer-events-none opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300">
                   <button
                     onClick={prev}
-                    aria-label="Image précédente"
+                    aria-label={t('carousel_prev')}
                     className="carousel-btn carousel-btn-prev pointer-events-auto"
                   >
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -189,7 +125,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
                   </button>
                   <button
                     onClick={next}
-                    aria-label="Image suivante"
+                    aria-label={t('carousel_next')}
                     className="carousel-btn carousel-btn-next pointer-events-auto"
                   >
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -228,7 +164,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
           </div>
 
           {/* ── RIGHT: info panel ── */}
-          <div ref={infoRef} className="min-w-0 lg:sticky lg:top-28 flex flex-col">
+          <div className="min-w-0 lg:sticky lg:top-28 flex flex-col">
 
             {/* Titre */}
             <div data-fade>

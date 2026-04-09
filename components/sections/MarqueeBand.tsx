@@ -1,13 +1,10 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
+
 export default function MarqueeBand() {
-  const items = [
-    'COMPANO BIKES',
-    'CUSTOM MADE',
-    'TITANIUM & CARBON',
-    'FREE DELIVERY',
-    'SINCE 2019',
-  ]
+  const t = useTranslations()
+  const items = t.raw('band') as string[]
   const doubled = [...items, ...items]
 
   return (

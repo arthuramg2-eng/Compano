@@ -86,7 +86,7 @@ export default function WarrantySection() {
   )
 
   return (
-    <section ref={containerRef} className="bg-white pt-28 pb-12 px-5 lg:px-10">
+    <section ref={containerRef} className="bg-white pt-16 lg:pt-28 pb-12 px-5 lg:px-10">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header */}

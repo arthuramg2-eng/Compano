@@ -38,7 +38,7 @@ export default function DealersSection({ locale }: DealersSectionProps) {
   )
 
   return (
-    <section ref={containerRef} className="relative bg-brand-black py-24 px-5 lg:px-10 overflow-hidden">
+    <section ref={containerRef} className="relative bg-brand-black py-16 lg:py-24 px-5 lg:px-10 overflow-hidden">
       {/* Gradient mesh orbs */}
       <div
         className="absolute left-[-80px] top-[-80px] w-[460px] h-[460px] rounded-full pointer-events-none"

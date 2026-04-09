@@ -122,10 +122,10 @@ export default function StatementSection() {
       className="relative bg-white overflow-hidden"
       style={{ minHeight: '480px' }}
     >
-      {/* Image — right strip, no empty space */}
+      {/* Image — right strip, hidden on mobile to prevent text overlap */}
       <div
         ref={imgRef}
-        className="absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden"
+        className="absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden hidden lg:block"
         style={{ width: '52%', opacity: 0 }}
       >
         <Image

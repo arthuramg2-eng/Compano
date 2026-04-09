@@ -7,7 +7,7 @@
     "vaa": "VAA",
     "dealers": "Find a dealer",
     "dealers_short": "Dealers",
-    "warranty": "Warranty",
+    "warranty": "VAA",
     "register": "Registration",
     "contact": "Contact us"
   },
@@ -136,9 +136,9 @@
   },
   "pages": {
     "models": {
-      "eyebrow": "Our lineup",
-      "title": "Four bikes.\nOne for you.",
-      "subtitle": "Every Compano is designed in Québec, Canada-compliant, and built for your four seasons.",
+      "eyebrow": "— Our lineup",
+      "title": "Four bikes\nBuilt for here",
+      "subtitle": "500W · 140 km range · Designed in Québec. Find the model that fits your ride.",
       "compare_title": "Compare models",
       "motor_title": "Why a rear hub motor?",
       "motor_subtitle": "A deliberate technical choice for the Canadian climate.",
@@ -210,6 +210,13 @@
       "eyebrow": "Registration",
       "title": "Register\nyour bike.",
       "subtitle": "Activate your warranty and unlock owner benefits.",
+      "intro": "Registering your Compano bike is useful for tracking purposes in the event of a warranty claim or theft claim. Registering your bike gives you access to the VAA Program: Theft Protection + Roadside Assistance.",
+      "serial_bike_label": "Bike",
+      "serial_bike_desc": "The <b>serial number</b> is engraved on the front of the head tube, near the fork.",
+      "serial_battery_label": "Battery",
+      "serial_battery_desc": "The <b>serial number</b> is on a sticker on the bottom or side of the battery. It contains at least 9 characters.",
+      "form_title": "Compano Registration",
+      "form_id": "Ez36ENRh",
       "form": {
         "first_name": "First name",
         "last_name": "Last name",
@@ -223,24 +230,6 @@
         "success": "Your bike is registered! Welcome to the Compano family.",
         "select_model": "Select a model"
       }
-    },
-    "contact": {
-      "eyebrow": "Contact us",
-      "title": "We're here\nfor you.",
-      "subtitle": "A question about your bike, warranty, or our models? Write to us.",
-      "form": {
-        "name": "Full name",
-        "email": "Email",
-        "subject": "Subject",
-        "message": "Message",
-        "submit": "Send message",
-        "success": "Message sent! We'll get back to you within 48h."
-      },
-      "info_title": "Contact info",
-      "email_label": "Email",
-      "social_title": "Social media",
-      "dealers_link": "Find a dealer",
-      "privacy": "Your data is protected under PIPEDA (Canada). We never sell your personal information."
     },
     "garantie": {
       "hero_eyebrow": "— VAA Program",
@@ -287,12 +276,12 @@
         {
           "label": "Owner's Guide 2023 – 24",
           "href_consult": "/en/guide/2023",
-          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-FR.pdf"
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-EN.pdf"
         },
         {
           "label": "Owner's Guide 2022",
           "href_consult": "/en/guide/2022",
-          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-FR.pdf"
+          "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-EN.pdf"
         },
         {
           "label": "Owner's Guide 2021",
@@ -311,6 +300,8 @@
       "vaa_badge": "VAA program included (valued at $300+)",
       "size_label": "Available sizes",
       "colors_label": "Available colors",
+      "carousel_prev": "Previous image",
+      "carousel_next": "Next image",
       "find_dealer": "Find a dealer",
       "description_title": "Description",
       "range_title": "Range",

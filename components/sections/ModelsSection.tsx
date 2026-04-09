@@ -17,7 +17,6 @@ interface ModelsSectionProps {
 
 export default function ModelsSection({ locale }: ModelsSectionProps) {
   const t = useTranslations('models')
-  const MODEL_TAGS   = [t('tag1'), t('tag2'), t('tag3'), t('tag4')]
   const containerRef = useRef<HTMLDivElement>(null)
   const headerRef    = useRef<HTMLDivElement>(null)
   const cardsRef     = useRef<HTMLDivElement>(null)
@@ -73,7 +72,7 @@ export default function ModelsSection({ locale }: ModelsSectionProps) {
     <section
       id="modeles"
       ref={containerRef}
-      className="bg-white py-28 px-5 lg:px-12"
+      className="bg-white py-16 lg:py-28 px-5 lg:px-12"
     >
       <div className="max-w-[1400px] mx-auto">
 
@@ -108,7 +107,6 @@ export default function ModelsSection({ locale }: ModelsSectionProps) {
             const desc  = locale === 'fr' ? model.desc_fr    : model.desc_en
             const pills = locale === 'fr' ? model.pills_fr   : model.pills_en
             const href  = locale === 'en' ? `/en/modeles/${model.slug}` : `/modeles/${model.slug}`
-            const tag   = MODEL_TAGS[index]
 
             return (
               <div
@@ -124,11 +122,6 @@ export default function ModelsSection({ locale }: ModelsSectionProps) {
                 >
                   {/* Image container — white background, no gray */}
                   <div className="relative overflow-hidden bg-white" style={{ aspectRatio: '4/3' }}>
-                    {/* Tag */}
-                    <span className="absolute top-4 left-4 z-10 bg-orange text-white font-sans text-[10px] tracking-[0.24em] uppercase font-medium px-3 py-1">
-                      {tag}
-                    </span>
-
                     <div className="model-card-img w-full h-full">
                       <Image
                         src={model.image}

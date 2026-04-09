@@ -160,15 +160,21 @@ body {
   transform: scaleX(1);
 }
 
-/* ─── Model card spec badge slide up on hover ────────────────── */
+/* ─── Model card spec badge: visible by default on touch, slide-up on hover desktop ── */
 .model-card .spec-badge {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.model-card:hover .spec-badge {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .model-card .spec-badge {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .model-card:hover .spec-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─── Marquee hover speed-up ─────────────────────────────────── */

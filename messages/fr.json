@@ -7,7 +7,7 @@
     "vaa": "VAA",
     "dealers": "Trouver un détaillant",
     "dealers_short": "Détaillants",
-    "warranty": "Garantie",
+    "warranty": "VAA",
     "register": "Enregistrement",
     "contact": "Nous joindre"
   },
@@ -136,9 +136,9 @@
   },
   "pages": {
     "models": {
-      "eyebrow": "Notre gamme",
-      "title": "Quatre vélos.\nUn pour vous.",
-      "subtitle": "Chaque modèle Compano est conçu au Québec, homologué Canada, et adapté à vos quatre saisons.",
+      "eyebrow": "— Notre gamme",
+      "title": "Quatre vélos\nFaits pour ici",
+      "subtitle": "500W · 140 km · Conçu au Québec. Choisissez le modèle qui correspond à votre style de vie.",
       "compare_title": "Comparer les modèles",
       "motor_title": "Pourquoi un moteur arrière ?",
       "motor_subtitle": "Un choix technique réfléchi pour le climat canadien.",
@@ -210,6 +210,13 @@
       "eyebrow": "Enregistrement",
       "title": "Enregistrez\nvotre vélo.",
       "subtitle": "Activez votre garantie et accédez aux avantages propriétaire.",
+      "intro": "Enregistrer votre vélo Compano est utile à des fins de suivi lors d'un cas de garantie ou d'une réclamation pour vol. L'enregistrement de votre vélo vous donne accès au Programme VAA : Antivol + Assistance.",
+      "serial_bike_label": "Vélo",
+      "serial_bike_desc": "Le <b>numéro de série</b> est gravé sur le devant du tube de direction, près de la fourche.",
+      "serial_battery_label": "Batterie",
+      "serial_battery_desc": "Le <b>numéro de série</b> est sur un autocollant au dessous ou sur le côté de la batterie. Il comprend au moins 9 caractères.",
+      "form_title": "Enregistrement Compano",
+      "form_id": "ircsHU87",
       "form": {
         "first_name": "Prénom",
         "last_name": "Nom",
@@ -223,24 +230,6 @@
         "success": "Votre vélo est enregistré ! Bienvenue dans la famille Compano.",
         "select_model": "Choisissez un modèle"
       }
-    },
-    "contact": {
-      "eyebrow": "Nous joindre",
-      "title": "On est là\npour vous.",
-      "subtitle": "Une question sur votre vélo, votre garantie ou nos modèles ? Écrivez-nous.",
-      "form": {
-        "name": "Nom complet",
-        "email": "Courriel",
-        "subject": "Sujet",
-        "message": "Message",
-        "submit": "Envoyer le message",
-        "success": "Message envoyé ! Nous vous répondrons sous 48h."
-      },
-      "info_title": "Coordonnées",
-      "email_label": "Courriel",
-      "social_title": "Réseaux sociaux",
-      "dealers_link": "Trouver un détaillant",
-      "privacy": "Vos données sont protégées conformément à la Loi 25 (Québec) et à la LPRPDE (Canada). Nous ne vendons jamais vos informations personnelles."
     },
     "garantie": {
       "hero_eyebrow": "— Programme VAA",
@@ -286,22 +275,22 @@
       "guides": [
         {
           "label": "Guide du propriétaire 2023 – 24",
-          "href_consult": "/guide/2023",
+          "href_consult": "/fr/guide/2023",
           "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-FR.pdf"
         },
         {
           "label": "Guide du propriétaire 2022",
-          "href_consult": "/guide/2022",
+          "href_consult": "/fr/guide/2022",
           "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-FR.pdf"
         },
         {
           "label": "Guide du propriétaire 2021",
-          "href_consult": "/guide/2021",
+          "href_consult": "/fr/guide/2021",
           "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202021FR_03.pdf"
         },
         {
           "label": "Guide du propriétaire 2020",
-          "href_consult": "/guide/2020",
+          "href_consult": "/fr/guide/2020",
           "href_download": "https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano%202020FR_V4_24_2020.pdf"
         }
       ]
@@ -311,6 +300,8 @@
       "vaa_badge": "Programme VAA inclus (valeur 300 $+)",
       "size_label": "Tailles disponibles",
       "colors_label": "Couleurs disponibles",
+      "carousel_prev": "Image précédente",
+      "carousel_next": "Image suivante",
       "find_dealer": "Trouver un revendeur",
       "description_title": "Description",
       "range_title": "Autonomie",

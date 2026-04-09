@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -8,17 +9,20 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function SmoothScroll() {
+  const pathname = usePathname()
+  const lenisRef = useRef<Lenis | null>(null)
+
   useEffect(() => {
-    // Désactiver la restauration de scroll du navigateur et forcer le haut de page
     if (typeof history !== 'undefined') {
       history.scrollRestoration = 'manual'
     }
-    window.scrollTo(0, 0)
+    document.documentElement.style.scrollBehavior = 'auto'
 
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
     })
+    lenisRef.current = lenis
 
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -28,14 +32,23 @@ export default function SmoothScroll() {
     gsap.ticker.add(raf)
     gsap.ticker.lagSmoothing(0)
 
-    // Disable native smooth scroll — Lenis handles it
-    document.documentElement.style.scrollBehavior = 'auto'
-
     return () => {
       gsap.ticker.remove(raf)
       lenis.destroy()
+      lenisRef.current = null
     }
   }, [])
+
+  // Scroll to top on every route change
+  useEffect(() => {
+    const lenis = lenisRef.current
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+    } else {
+      window.scrollTo(0, 0)
+    }
+    ScrollTrigger.refresh()
+  }, [pathname])
 
   return null
 }

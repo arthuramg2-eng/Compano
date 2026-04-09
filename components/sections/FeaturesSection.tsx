@@ -98,7 +98,7 @@ export default function FeaturesSection() {
   return (
     <section
       ref={containerRef}
-      className="bg-white pt-12 pb-28 px-6 lg:px-12 overflow-hidden"
+      className="bg-white pt-10 pb-16 lg:pt-12 lg:pb-28 px-6 lg:px-12 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 
@@ -143,7 +143,7 @@ export default function FeaturesSection() {
                 {/* Big background number */}
                 <span
                   className="feature-num-bg absolute right-0 top-1/2 -translate-y-1/2 font-condensed leading-none select-none pointer-events-none"
-                  style={{ fontSize: '8vw', color: '#EBEBEB', transition: 'color 0.35s ease', lineHeight: 1 }}
+                  style={{ fontSize: 'clamp(72px, 8vw, 120px)', color: '#EBEBEB', transition: 'color 0.35s ease', lineHeight: 1 }}
                 >
                   {feat.num}
                 </span>

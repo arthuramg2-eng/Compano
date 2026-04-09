@@ -55,7 +55,7 @@ export default function Footer({ locale }: FooterProps) {
 
       <div className="max-w-[1280px] mx-auto px-5 lg:px-10 pt-16 pb-8">
         {/* Column grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1fr] gap-10 mb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1fr] gap-x-10 gap-y-10 mb-14">
 
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
@@ -72,12 +72,12 @@ export default function Footer({ locale }: FooterProps) {
             <h4 className="font-condensed font-bold text-[10px] tracking-[0.48em] uppercase text-white/14 mb-5">
               {t('col_models')}
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1">
               {modelLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
+                    className="inline-block py-2 text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -91,12 +91,12 @@ export default function Footer({ locale }: FooterProps) {
             <h4 className="font-condensed font-bold text-[10px] tracking-[0.48em] uppercase text-white/14 mb-5">
               {t('col_tools')}
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1">
               {toolLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
+                    className="inline-block py-2 text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -106,16 +106,16 @@ export default function Footer({ locale }: FooterProps) {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h4 className="font-condensed font-bold text-[10px] tracking-[0.48em] uppercase text-white/14 mb-5">
               {t('col_contact')}
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1">
               {contactLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
+                    className="inline-block py-2 text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -124,7 +124,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <a
                   href="mailto:info@compano.ca"
-                  className="text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
+                  className="inline-block py-2 text-[13px] text-white/32 hover:text-orange transition-colors duration-200"
                 >
                   info@compano.ca
                 </a>
@@ -145,7 +145,7 @@ export default function Footer({ locale }: FooterProps) {
               href="https://www.facebook.com/Compano-108107594367854"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center border border-white/[0.07] text-white/22 hover:border-orange/45 hover:text-orange transition-all duration-200"
+              className="w-11 h-11 flex items-center justify-center border border-white/[0.07] text-white/22 hover:border-orange/45 hover:text-orange transition-all duration-200"
               aria-label="Facebook"
             >
               <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
@@ -156,7 +156,7 @@ export default function Footer({ locale }: FooterProps) {
               href="https://www.instagram.com/Compano.ca/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center border border-white/[0.07] text-white/22 hover:border-orange/45 hover:text-orange transition-all duration-200"
+              className="w-11 h-11 flex items-center justify-center border border-white/[0.07] text-white/22 hover:border-orange/45 hover:text-orange transition-all duration-200"
               aria-label="Instagram"
             >
               <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">

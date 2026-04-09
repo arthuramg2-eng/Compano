@@ -60,10 +60,11 @@ export default function Header({ locale }: HeaderProps) {
   }, [scrolled, isProductPage])
 
   const navLinks = [
-    { href: `${prefix}/modeles`,  label: t('models')   },
-    { href: `${prefix}/a-propos`, label: t('about')    },
-    { href: `${prefix}/outils`,   label: t('tools')    },
-    { href: `${prefix}/garantie`, label: t('warranty') },
+    { href: `${prefix}/modeles`,        label: t('models')   },
+    { href: `${prefix}/a-propos`,       label: t('about')    },
+    { href: `${prefix}/outils`,         label: t('tools')    },
+    { href: `${prefix}/garantie`,       label: t('warranty') },
+    { href: `${prefix}/enregistrement`, label: t('register') },
   ]
 
   return (
@@ -181,6 +182,9 @@ export default function Header({ locale }: HeaderProps) {
             >
               {t('dealers_short')}
             </Link>
+            <div className="mt-6 flex items-center" onClick={e => e.stopPropagation()}>
+              <LangSwitcher locale={locale} />
+            </div>
           </nav>
         </div>
       )}

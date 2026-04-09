@@ -127,7 +127,7 @@ export default function ProductDetailsSection({ model, locale }: Props) {
   return (
     <>
       {/* ── Description — éditorial ── */}
-      <section ref={descRef} className="relative bg-white px-5 lg:px-12 pt-20 pb-20 overflow-hidden">
+      <section ref={descRef} className="relative bg-white px-5 lg:px-12 pt-12 pb-12 lg:pt-20 lg:pb-20 overflow-hidden">
 
         {/* Watermark nom du modèle — gauche, interactif */}
         <div
@@ -190,7 +190,7 @@ export default function ProductDetailsSection({ model, locale }: Props) {
       </section>
 
       {/* ── Specs table — dark ── */}
-      <section ref={specsRef} className="bg-brand-black px-5 lg:px-12 py-20">
+      <section ref={specsRef} className="bg-brand-black px-5 lg:px-12 py-14 lg:py-20">
         <div className="max-w-[1400px] mx-auto">
           <h2
             data-reveal
@@ -251,7 +251,7 @@ export default function ProductDetailsSection({ model, locale }: Props) {
       </section>
 
       {/* ── Other models — light ── */}
-      <section ref={othersRef} className="bg-white px-5 lg:px-12 py-20">
+      <section ref={othersRef} className="bg-white px-5 lg:px-12 py-14 lg:py-20">
         <div className="max-w-[1400px] mx-auto">
           <p data-reveal className="font-sans text-[11px] tracking-[0.22em] uppercase text-brand-black/35 mb-10">
             — {t('other_models')}
