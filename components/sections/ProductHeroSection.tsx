@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -18,9 +18,20 @@ export default function ProductHeroSection({ model, locale }: Props) {
   const colors = locale === 'fr' ? model.specs.colors_fr : model.specs.colors_en
   const allImages = model.images.length > 0 ? model.images : [model.image]
   const [activeImg, setActiveImg] = useState(0)
+  const touchStartX = useRef<number | null>(null)
 
   const prev = () => setActiveImg((i) => (i - 1 + allImages.length) % allImages.length)
   const next = () => setActiveImg((i) => (i + 1) % allImages.length)
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const delta = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(delta) > 40) delta > 0 ? next() : prev()
+    touchStartX.current = null
+  }
 
   const electricalSpecs = [
     { label: t('motor_label'),           value: model.specs.motor },
@@ -89,7 +100,11 @@ export default function ProductHeroSection({ model, locale }: Props) {
           <div className="min-w-0">
 
             {/* Image + boutons (wrapper sans overflow:hidden pour que les boutons ne soient pas clippés) */}
-            <div className="group/carousel relative w-full aspect-[4/3]">
+            <div
+              className="group/carousel relative w-full aspect-[4/3]"
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+            >
               {/* Image container avec overflow:hidden uniquement pour le crop */}
               <div className="absolute inset-0 overflow-hidden">
                 {allImages.map((img, i) => (
@@ -113,7 +128,7 @@ export default function ProductHeroSection({ model, locale }: Props) {
 
               {/* Prev / Next — overlay flex pour positionnement fiable */}
               {allImages.length > 1 && (
-                <div className="absolute inset-0 flex items-center justify-between px-3 z-10 pointer-events-none opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex items-center justify-between px-3 z-10 pointer-events-none lg:opacity-0 lg:group-hover/carousel:opacity-100 transition-opacity duration-300">
                   <button
                     onClick={prev}
                     aria-label={t('carousel_prev')}
