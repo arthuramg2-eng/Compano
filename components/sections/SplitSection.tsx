@@ -74,7 +74,7 @@ function SplitPanel({ href, image, tag, title, cta }: SplitPanelProps) {
 
 export default function SplitSection({ locale }: SplitSectionProps) {
   const t = useTranslations('split')
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2">
@@ -86,7 +86,7 @@ export default function SplitSection({ locale }: SplitSectionProps) {
         cta={t('brand_cta')}
       />
       <SplitPanel
-        href={`${prefix}/vaa`}
+        href={`${prefix}/garantie`}
         image="https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/dms3rep/multi/banner-vaa-compano-2.jpg"
         tag={t('vaa_tag')}
         title={t('vaa_title')}

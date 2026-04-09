@@ -19,7 +19,7 @@ export default function DealersSection({ locale }: DealersSectionProps) {
   const t = useTranslations('dealers')
   const containerRef = useRef<HTMLDivElement>(null)
   const innerRef     = useRef<HTMLDivElement>(null)
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   useGSAP(
     () => {
@@ -38,7 +38,7 @@ export default function DealersSection({ locale }: DealersSectionProps) {
   )
 
   return (
-    <section ref={containerRef} className="relative bg-brand-black py-16 lg:py-24 px-5 lg:px-10 overflow-hidden">
+    <section id="detaillants" ref={containerRef} className="relative bg-brand-black py-16 lg:py-24 px-5 lg:px-10 overflow-hidden">
       {/* Gradient mesh orbs */}
       <div
         className="absolute left-[-80px] top-[-80px] w-[460px] h-[460px] rounded-full pointer-events-none"

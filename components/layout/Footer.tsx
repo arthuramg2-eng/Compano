@@ -23,7 +23,7 @@ export default function Footer({ locale }: FooterProps) {
   const t  = useTranslations('footer')
   const tn = useTranslations('nav')
 
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
   const year   = new Date().getFullYear()
 
   const modelLinks = [
@@ -35,7 +35,7 @@ export default function Footer({ locale }: FooterProps) {
 
   const toolLinks = [
     { href: `${prefix}/outils`,       label: t('tools_guide')   },
-    { href: `${prefix}/vaa`,          label: tn('vaa')          },
+    { href: `${prefix}/garantie`,      label: tn('vaa')          },
     { href: `${prefix}/enregistrement`, label: tn('register')   },
   ]
 
