@@ -44,8 +44,8 @@ export default function HeroSection({ locale }: HeroSectionProps) {
 
       // ── Initial states — all set before first paint ─────────────────────────
 
-      // Logo watermark: far left, waiting to coalesce
-      gsap.set(decorTextRef.current, { x: '-72vw', opacity: 0 })
+      // Logo watermark: always visible, no scroll animation
+      gsap.set(decorTextRef.current, { x: 0, opacity: 1 })
 
       // Bike: suspended above viewport, purposeful angle
       gsap.set(bikeRef.current, {
@@ -102,8 +102,6 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       if (isMobile) {
         gsap.set(scrollIndRef.current, { opacity: 0 })
         const mob = gsap.timeline({ delay: 0.2 })
-        mob.to(decorTextRef.current,
-          { x: 0, opacity: 1, ease: 'expo.out', duration: 0.9 }, 0)
         mob
           .to(line1Ref.current, { y: '0%', opacity: 1, ease: 'power3.out', duration: 0.65 }, 0.25)
           .to(line2Ref.current, { y: '0%', opacity: 1, ease: 'power3.out', duration: 0.65 }, 0.38)
@@ -130,12 +128,6 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           onEnterBack: pauseIdle,
         },
       })
-
-      // ── MOVEMENT 1 — The Logo Arrives (0 → 0.28) ────────────────────────────
-      tl.to(decorTextRef.current, {
-        x: 0, opacity: 1,
-        ease: 'expo.out', duration: 0.28,
-      }, 0)
 
       // ── MOVEMENT 2 — The Object Descends (0.18 → 0.58) ──────────────────────
       // Falls the way a well-balanced object falls — with purpose, not weight.
@@ -249,7 +241,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
       <div
         ref={decorTextRef}
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none hidden md:flex"
-        style={{ zIndex: 0, transform: 'translateX(-72vw)', opacity: 0 }}
+        style={{ zIndex: 0 }}
         aria-hidden="true"
       >
         <Image
