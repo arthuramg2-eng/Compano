@@ -29,7 +29,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
   const bikeGlowRef   = useRef<HTMLDivElement>(null)
   const scrollIndRef  = useRef<HTMLDivElement>(null)
 
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   useGSAP(
     () => {

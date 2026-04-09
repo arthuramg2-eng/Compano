@@ -13,7 +13,7 @@ interface Props {
 
 export default function ProductHeroSection({ model, locale }: Props) {
   const t = useTranslations('pages.product')
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   const colors = locale === 'fr' ? model.specs.colors_fr : model.specs.colors_en
   const allImages = model.images.length > 0 ? model.images : [model.image]

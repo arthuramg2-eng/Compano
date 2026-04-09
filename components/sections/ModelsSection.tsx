@@ -22,7 +22,7 @@ export default function ModelsSection({ locale }: ModelsSectionProps) {
   const cardsRef     = useRef<HTMLDivElement>(null)
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
 
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   // Directional origins per card index
   const fromProps = [

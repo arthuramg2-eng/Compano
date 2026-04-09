@@ -244,7 +244,7 @@ function DividerLine() {
 
 export default function ModelDetailsSection({ locale }: ModelDetailsSectionProps) {
   const t      = useTranslations('modelDetails')
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   const rows = [
     {

@@ -20,7 +20,7 @@ export default function FooterCTA({ locale }: FooterCTAProps) {
   const subtitleRef  = useRef<HTMLParagraphElement>(null)
   const btnRef       = useRef<HTMLDivElement>(null)
 
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   useGSAP(
     () => {

@@ -5,16 +5,22 @@ import PdfViewer from './PdfViewer'
 type Guide = {
   label: string
   pdf: string
+  pdfEn?: string
+  labelEn?: string
 }
 
 const GUIDES: Record<string, Guide> = {
   '2023': {
     label: 'Guide du propriétaire 2023 – 24',
     pdf: 'https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-FR.pdf',
+    pdfEn: 'https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2023-v8-EN.pdf',
+    labelEn: "Owner's Guide 2023 – 24",
   },
   '2022': {
     label: 'Guide du propriétaire 2022',
     pdf: 'https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-FR.pdf',
+    pdfEn: 'https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/files/uploaded/Compano2022-EN.pdf',
+    labelEn: "Owner's Guide 2022",
   },
   '2021': {
     label: 'Guide du propriétaire 2021',
@@ -35,7 +41,10 @@ export default async function GuidePage({
   const guide = GUIDES[year]
   if (!guide) notFound()
 
-  const backHref = locale === 'en' ? '/en/outils' : '/outils'
+  const isEn = locale === 'en'
+  const activePdf = (isEn && guide.pdfEn) ? guide.pdfEn : guide.pdf
+  const activeLabel = (isEn && guide.labelEn) ? guide.labelEn : guide.label
+  const backHref = isEn ? '/en/outils' : '/outils'
 
   return (
     <div className="h-screen bg-white pt-[72px] flex flex-col overflow-hidden">
@@ -59,17 +68,17 @@ export default async function GuidePage({
             className="font-condensed font-bold uppercase text-brand-black"
             style={{ fontSize: 'clamp(13px, 1.4vw, 16px)', letterSpacing: '0.06em' }}
           >
-            {guide.label}
+            {activeLabel}
           </span>
         </div>
 
         <Link
-          href={guide.pdf}
+          href={activePdf}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 font-sans font-medium text-[11px] tracking-[0.2em] uppercase text-orange shrink-0"
         >
-          <span>{locale === 'en' ? 'Download' : 'Télécharger'}</span>
+          <span>{isEn ? 'Download' : 'Télécharger'}</span>
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
             <path d="M8 1v9M4.5 6.5 8 10l3.5-3.5M2 13h12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -77,7 +86,7 @@ export default async function GuidePage({
       </div>
 
       {/* ── Visionneuse PDF ───────────────────────────────── */}
-      <PdfViewer src={guide.pdf} title={guide.label} />
+      <PdfViewer src={activePdf} title={activeLabel} />
 
     </div>
   )

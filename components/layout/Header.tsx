@@ -23,7 +23,7 @@ export default function Header({ locale }: HeaderProps) {
   const pathname  = usePathname()
 
   const isProductPage = /\/modeles\/.+/.test(pathname)
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   useEffect(() => {
     // Pages produit : hero = 62vh, on attend d'en sortir
@@ -81,12 +81,12 @@ export default function Header({ locale }: HeaderProps) {
         <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12 h-full grid grid-cols-[1fr_auto_1fr] items-center">
 
           {/* Left — nav links */}
-          <nav className="hidden lg:flex items-center gap-10 h-full">
+          <nav className={`hidden lg:flex items-center h-full ${locale === 'fr' ? 'gap-6' : 'gap-10'}`}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link-underline relative h-full flex items-center font-sans text-[11px] tracking-[0.24em] uppercase font-medium transition-colors duration-200"
+                className={`nav-link-underline relative h-full flex items-center font-sans text-[11px] uppercase font-medium transition-colors duration-200 ${locale === 'fr' ? 'tracking-[0.16em]' : 'tracking-[0.24em]'}`}
                 style={{ color: 'rgba(10,10,10,0.45)' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#0A0A0A')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(10,10,10,0.45)')}
@@ -123,10 +123,10 @@ export default function Header({ locale }: HeaderProps) {
           </Link>
 
           {/* Right — lang + CTA */}
-          <div className="hidden lg:flex items-center justify-end gap-5">
+          <div className={`hidden lg:flex items-center justify-end ${locale === 'fr' ? 'gap-4' : 'gap-5'}`}>
             <Link
               href={`${prefix}/nous-joindre`}
-              className="nav-link-underline relative h-full flex items-center font-sans text-[11px] tracking-[0.24em] uppercase font-medium transition-colors duration-200"
+              className={`nav-link-underline relative h-full flex items-center font-sans text-[11px] uppercase font-medium transition-colors duration-200 ${locale === 'fr' ? 'tracking-[0.16em]' : 'tracking-[0.24em]'}`}
               style={{ color: 'rgba(10,10,10,0.45)' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#0A0A0A')}
               onMouseLeave={e => (e.currentTarget.style.color = 'rgba(10,10,10,0.45)')}

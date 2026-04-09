@@ -16,7 +16,7 @@ interface Props {
 
 export default function AboutStorySection({ locale }: Props) {
   const t      = useTranslations('pages.about')
-  const prefix = locale === 'en' ? '/en' : ''
+  const prefix = locale === 'en' ? '/en' : '/fr'
 
   const sectionRef   = useRef<HTMLElement>(null)
   const imgRef       = useRef<HTMLDivElement>(null)

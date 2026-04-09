@@ -29,7 +29,7 @@ export default function ProductDetailsSection({ model, locale }: Props) {
   const descRef  = useRef<HTMLDivElement>(null)
   const specsRef = useRef<HTMLDivElement>(null)
   const othersRef = useRef<HTMLDivElement>(null)
-  const prefix   = locale === 'en' ? '/en' : ''
+  const prefix   = locale === 'en' ? '/en' : '/fr'
   const [nameHovered, setNameHovered] = useState(false)
   const key      = SLUG_KEY[model.slug] ?? model.slug
   const desc1Key = `${key}_desc1` as Parameters<typeof t>[0]
