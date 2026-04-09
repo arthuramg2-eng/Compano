@@ -206,17 +206,8 @@ function ModelRow({
 
   return (
     <div ref={rowRef} className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-      {reverse ? (
-        <>
-          {textCol}
-          {imgCol}
-        </>
-      ) : (
-        <>
-          {imgCol}
-          {textCol}
-        </>
-      )}
+      <div className={reverse ? 'md:order-2' : ''}>{imgCol}</div>
+      <div className={reverse ? 'md:order-1' : ''}>{textCol}</div>
     </div>
   )
 }

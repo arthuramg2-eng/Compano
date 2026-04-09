@@ -405,22 +405,6 @@ export default function HeroSection({ locale }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Mobile bike image — static, independent of GSAP bikeRef */}
-      <div
-        className="lg:hidden absolute bottom-0 right-0 pointer-events-none select-none"
-        style={{ width: '75vw', maxWidth: 340, zIndex: 1 }}
-        aria-hidden="true"
-      >
-        <Image
-          src="/image_no_bg.png"
-          alt=""
-          width={680}
-          height={510}
-          className="object-contain w-full opacity-20"
-          draggable={false}
-        />
-      </div>
-
       {/* Scroll indicator — fades with dignity in the stillness phase */}
       <div
         ref={scrollIndRef}
