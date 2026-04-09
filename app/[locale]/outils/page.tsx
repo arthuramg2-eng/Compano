@@ -24,7 +24,6 @@ function OutilsHeroWrapper() {
       eyebrow={t('eyebrow')}
       title={t('title')}
       subtitle={t('subtitle')}
-      imageSrc="https://de.cdn-website.com/d6a2614a823743da9875be7d4ec06cf4/dms3rep/multi/DSC_7707.jpg"
     />
   )
 }
